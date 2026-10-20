@@ -261,7 +261,7 @@
 <h3 class="text-lg font-bold text-slate-900 my-4">Sequence, Series and Mean Value Theorems</h3>
 </div>
 <div class="space-y-2 pt-4 border-t border-amber-200/60 text-sm">
-<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" href="Unit-I/UNIT-I LECTURE NOTES.pdf" target="_blank" rel="noopener">
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" href="Unit-I/UNIT-I%20LECTURE%20NOTES.pdf" target="_blank" rel="noopener">
 <span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-500"></i> Lecture Notes</span>
 <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
 </a>
@@ -282,7 +282,11 @@
 <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
 </a>
 <a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" href="Unit-I/sequence-quiz.pdf" target="_blank" rel="noopener">
-<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-purple-600"></i> Quiz PDF Sheet</span>
+<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-purple-600"></i> Sequences Quiz PDF</span>
+<i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
+</a>
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" href="Unit-I/series-quiz.pdf" target="_blank" rel="noopener">
+<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-purple-600"></i> Series Quiz PDF</span>
 <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
 </a>
 </div>
@@ -374,8 +378,8 @@
 <div class="tab-content hidden space-y-8" id="assignments">
   <section class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm">
     <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Assignments</h2>
-    <a class="inline-flex items-center gap-2 text-emerald-700 font-semibold hover:underline" href="Unit-I/sequence-and-series-quiz-12-sets_final.pdf" target="_blank" rel="noopener">
-        <i class="fa-solid fa-file-pdf"></i> Download Unit-I Question Sets PDF
+    <a class="inline-flex items-center gap-2 text-emerald-700 font-semibold hover:underline" href="Unit-I/series-quiz.pdf" target="_blank" rel="noopener">
+        <i class="fa-solid fa-file-pdf"></i> Download Unit-I Series Question PDF
     </a>
   </section>
 </div>
@@ -411,7 +415,7 @@
     <!-- UNIT I: SEQUENCES QUIZ -->
     <div id="quiz-seq" class="quiz-panel space-y-6">
       <div class="flex items-center justify-between border-b pb-3">
-        <h3 class="text-xl font-bold text-slate-900">Unit I: Sequences Practice Quiz (10 Questions)</h3>
+        <h3 class="text-xl font-bold text-slate-900">Unit I: Sequences Practice Quiz (5 Questions)</h3>
         <a href="Unit-I/sequence-quiz.pdf" target="_blank" rel="noopener" class="text-xs text-emerald-700 font-semibold hover:underline flex items-center gap-1">
           <i class="fa-solid fa-file-pdf"></i> View Source PDF
         </a>
@@ -472,23 +476,117 @@
       </form>
     </div>
 
-    <!-- UNIT I: SERIES QUIZ -->
+    <!-- UNIT I: SERIES QUIZ (10 QUESTIONS FULLY EMBEDDED) -->
     <div id="quiz-series" class="quiz-panel hidden space-y-6">
       <div class="flex items-center justify-between border-b pb-3">
-        <h3 class="text-xl font-bold text-slate-900">Unit I: Infinite Series Convergence Quiz</h3>
-        <a href="Unit-I/sequence-and-series-quiz-12-sets_final.pdf" target="_blank" rel="noopener" class="text-xs text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+        <h3 class="text-xl font-bold text-slate-900">Unit I: Infinite Series Convergence Quiz (10 Questions)</h3>
+        <a href="Unit-I/series-quiz.pdf" target="_blank" rel="noopener" class="text-xs text-emerald-700 font-semibold hover:underline flex items-center gap-1">
           <i class="fa-solid fa-file-pdf"></i> View Source PDF
         </a>
       </div>
       <form id="form-series" class="space-y-5">
+
         <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-          <p class="font-semibold text-slate-800 text-sm">1. The infinite series ∑ [n / (n^3 + 4)] is:</p>
+          <p class="font-semibold text-slate-800 text-sm">Q1. Test the convergence of the infinite series ∑ [n / (n^3 + 4)]:</p>
           <div class="space-y-2">
-            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr1" value="convergent"> Convergent</label>
-            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr1" value="divergent"> Divergent</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr1" value="A"> (A) Convergent (by Comparison Test with 1/n^2)</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr1" value="B"> (B) Divergent (by p-series test)</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr1" value="C"> (C) Oscillatory</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr1" value="D"> (D) Absolutely Divergent</label>
           </div>
         </div>
-        <button type="button" onclick="gradeUnitQuiz('series', {sr1:'convergent'})" class="w-full bg-[#2A6B4C] hover:bg-[#22573e] text-white font-bold py-3 rounded-xl transition shadow-md">Submit Series Quiz</button>
+
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q2. Determine the behavior of the geometric series ∑ (1/3)^n from n=1 to ∞:</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr2" value="A"> (A) Divergent</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr2" value="B"> (B) Convergent with sum = 1/2</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr2" value="C"> (C) Convergent with sum = 1/3</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr2" value="D"> (D) Oscillatory</label>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q3. Apply D'Alembert's Ratio Test to the series ∑ (n! / 2^n):</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr3" value="A"> (A) Limit L = 0 (Convergent)</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr3" value="B"> (B) Limit L = 1/2 (Convergent)</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr3" value="C"> (C) Limit L = ∞ (Divergent)</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr3" value="D"> (D) Test Inconclusive</label>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q4. Using Cauchy's Root Test, test the series ∑ [(n+1)/(2n+1)]^n:</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr4" value="A"> (A) L = 1/2 < 1 (Convergent)</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr4" value="B"> (B) L = 2 > 1 (Divergent)</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr4" value="C"> (C) L = 1 (Inconclusive)</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr4" value="D"> (D) L = 0 (Divergent)</label>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q5. For what values of p is the p-series ∑ (1 / n^p) convergent?</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr5" value="A"> (A) p > 1</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr5" value="B"> (B) p ≤ 1</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr5" value="C"> (C) p < 0</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr5" value="D"> (D) All real numbers</label>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q6. Test the convergence of the alternating series ∑ [(-1)^(n-1) / n] using Leibniz Test:</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr6" value="A"> (A) Conditionally Convergent</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr6" value="B"> (B) Absolutely Convergent</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr6" value="C"> (C) Divergent</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr6" value="D"> (D) Oscillatory Infinite</label>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q7. The harmonic series ∑ (1 / n) is:</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr7" value="A"> (A) Divergent</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr7" value="B"> (B) Convergent to 1</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr7" value="C"> (C) Convergent to e</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr7" value="D"> (D) Absolutely Convergent</label>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q8. Determine the radius of convergence R for power series ∑ (x^n / n!):</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr8" value="A"> (A) R = ∞</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr8" value="B"> (B) R = 1</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr8" value="C"> (C) R = 0</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr8" value="D"> (D) R = 2</label>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q9. Test the series ∑ 1 / (n^2 + 1) using Raabe's or Comparison Test:</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr9" value="A"> (A) Convergent</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr9" value="B"> (B) Divergent</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr9" value="C"> (C) Oscillatory</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr9" value="D"> (D) Inconclusive</label>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q10. If lim (n → ∞) a_n ≠ 0, then the infinite series ∑ a_n is:</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr10" value="A"> (A) Definitely Divergent (by Test for Divergence)</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr10" value="B"> (B) Convergent</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr10" value="C"> (C) Absolutely Convergent</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr10" value="D"> (D) Conditionally Convergent</label>
+          </div>
+        </div>
+
+        <button type="button" onclick="gradeUnitQuiz('series', {sr1:'A', sr2:'B', sr3:'C', sr4:'A', sr5:'A', sr6:'A', sr7:'A', sr8:'A', sr9:'A', sr10:'A'})" class="w-full bg-[#2A6B4C] hover:bg-[#22573e] text-white font-bold py-3 rounded-xl transition shadow-md">Submit Series Quiz</button>
       </form>
     </div>
 
