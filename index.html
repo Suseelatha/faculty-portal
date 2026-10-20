@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html class="scroll-smooth" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Dr. A. Suseelatha| Faculty Portal</title>
+<title>Dr. A. Suseelatha | Faculty Portal</title>
 <!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -35,7 +34,6 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
-        
         .tab-content { animation: fadeIn .35s ease-out; }
         @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
         ::selection { background:#dbeafe; color:#172554; }
@@ -53,13 +51,6 @@
         }
         .tab-content { animation: fadeUp .35s ease both; }
         @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
-        .academic-glow { box-shadow: 0 20px 60px rgba(15, 23, 42, .12); }
-        .metric-card { transition: transform .25s ease, box-shadow .25s ease; }
-        .metric-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(15,23,42,.08); }
-        .profile-photo { object-position: center top; }
-        .section-kicker { letter-spacing: .14em; }
-        .tag { display:inline-flex; padding:.45rem .7rem; border-radius:999px; background:#f1f5f9; border:1px solid #e2e8f0; font-size:.72rem; font-weight:600; color:#334155; }
-    
         .home-serif { font-family: Georgia, 'Times New Roman', serif; }
         .home-hero {
             position: relative;
@@ -112,26 +103,11 @@
             border: 1px solid rgba(42, 107, 76, 0.22);
             backdrop-filter: blur(4px);
         }
-        @media (max-width: 900px) {
-            .home-profile { width: 175px; height: 230px; }
-            .home-hero-content { padding: 32px 24px; }
-        }
-        @media (max-width: 700px) {
-            .home-hero { min-height: auto; }
-            .institute-photo-wrap::after {
-                background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.96) 100%);
-            }
-            .home-hero-content { padding: 30px 18px; }
-        }
-
-        .notification-ticker .ticker-track { display:inline-block; animation:tickerMove 22s linear infinite; padding-left:100%; }
-        .notification-ticker:hover .ticker-track { animation-play-state:paused; }
-        @keyframes tickerMove { from { transform:translateX(0); } to { transform:translateX(-100%); } }
 </style>
 </head>
 <body class="text-slate-800 antialiased min-h-screen flex flex-col md:flex-row">
-<!-- Navigation Header -->
-<!-- Mobile Header Bar (Only visible on mobile screens) -->
+
+<!-- Mobile Header Bar -->
 <div class="md:hidden sticky top-0 z-40 bg-[#2A6B4C] border-b border-[#1f523a] px-4 py-3.5 flex items-center justify-between shadow-md">
 <div>
 <span class="block font-bold text-white text-lg leading-tight home-serif">Dr. A. Suseelatha</span>
@@ -141,11 +117,12 @@
 <i class="fa-solid fa-bars text-lg"></i>
 </button>
 </div>
+
 <!-- Mobile Sidebar Dark Backdrop Overlay -->
 <div class="fixed inset-0 bg-slate-900/60 z-40 hidden md:hidden backdrop-blur-sm transition-opacity" id="sidebar-overlay" onclick="toggleMobileMenu()"></div>
+
 <!-- Left Sidebar Navigation -->
 <aside class="fixed md:sticky top-0 inset-y-0 left-0 z-50 w-72 lg:w-80 bg-[#2A6B4C] border-r border-[#1f523a] text-white flex flex-col justify-between p-6 shadow-2xl md:shadow-lg transition-transform duration-300 transform -translate-x-full md:translate-x-0 h-screen overflow-y-auto shrink-0" id="sidebar-nav">
-<!-- Faculty Branding -->
 <div>
 <div class="flex items-center justify-between pb-6 border-b border-[#1f523a]/60 mb-6">
 <div class="flex items-center gap-3.5">
@@ -157,19 +134,22 @@
 <p class="text-emerald-100/80 text-xs mt-0.5 tracking-wide">Asst. Professor in Mathematics</p>
 </div>
 </div>
-<!-- Mobile Close Button -->
 <button class="md:hidden text-white/70 hover:text-white p-2" onclick="toggleMobileMenu()">
 <i class="fa-solid fa-xmark text-xl"></i>
 </button>
 </div>
-<!-- Vertical Oval Tabs Navigation -->
+
 <p class="text-[11px] font-bold uppercase tracking-wider text-emerald-200/70 px-3 mb-2.5">Navigation Menu</p>
 <nav class="flex flex-col gap-2">
-<button class="nav-btn w-full flex items-center gap-3.5 px-4.5 py-3 text-sm rounded-full font-bold text-white bg-gradient-to-r from-[#2A6B4C] to-[#3d8c67] shadow-md border border-emerald-200/40 transition-all duration-200 text-left" id="nav-home" onclick="switchTab('home')">
+<button class="nav-btn w-full flex items-center gap-3.5 px-4.5 py-3 text-sm rounded-full font-bold text-white bg-gradient-to-r from-emerald-500 to-teal-600 shadow-md border border-emerald-200/40 transition-all duration-200 text-left" id="nav-home" onclick="switchTab('home')">
 <i class="fa-solid fa-house w-5 text-center text-sm"></i>
 <span>Home</span>
 </button>
-<button class="nav-btn w-full flex items-center gap-3.5 px-4 py-3 text-sm rounded-full font-medium text-white/85 hover:text-white hover:bg-white/10 transition-all duration-200 text-left" id="nav-syllabus" onclick="switchTab('syllabus')"><i class="fa-solid fa-list-check w-5 text-center text-sm"></i><span>Syllabus</span></button><button class="nav-btn w-full flex items-center gap-3.5 px-4 py-3 text-sm rounded-full font-medium text-white/85 hover:text-white hover:bg-white/10 transition-all duration-200 text-left" id="nav-lecturenotes" onclick="switchTab('lecturenotes')">
+<button class="nav-btn w-full flex items-center gap-3.5 px-4 py-3 text-sm rounded-full font-medium text-white/85 hover:text-white hover:bg-white/10 transition-all duration-200 text-left" id="nav-syllabus" onclick="switchTab('syllabus')">
+<i class="fa-solid fa-list-check w-5 text-center text-sm"></i>
+<span>Syllabus</span>
+</button>
+<button class="nav-btn w-full flex items-center gap-3.5 px-4 py-3 text-sm rounded-full font-medium text-white/85 hover:text-white hover:bg-white/10 transition-all duration-200 text-left" id="nav-lecturenotes" onclick="switchTab('lecturenotes')">
 <i class="fa-solid fa-book-open w-5 text-center text-sm"></i>
 <span>Lecture Notes</span>
 </button>
@@ -181,13 +161,17 @@
 <i class="fa-solid fa-file-pen w-5 text-center text-sm"></i>
 <span>Assignments</span>
 </button>
+<button class="nav-btn w-full flex items-center gap-3.5 px-4 py-3 text-sm rounded-full font-medium text-white/85 hover:text-white hover:bg-white/10 transition-all duration-200 text-left" id="nav-quizzes" onclick="switchTab('quizzes')">
+<i class="fa-solid fa-square-check w-5 text-center text-sm"></i>
+<span>Unit Quizzes</span>
+</button>
 <button class="nav-btn w-full flex items-center gap-3.5 px-4 py-3 text-sm rounded-full font-medium text-white/85 hover:text-white hover:bg-white/10 transition-all duration-200 text-left" id="nav-contact" onclick="switchTab('contact')">
 <i class="fa-solid fa-address-book w-5 text-center text-sm"></i>
 <span>Contact</span>
 </button>
 </nav>
 </div>
-<!-- Sidebar Bottom Info -->
+
 <div class="pt-6 border-t border-[#1f523a]/60 text-xs text-emerald-100/70">
 <div class="flex items-center gap-2 mb-1.5 text-white/90 font-medium">
 <i class="fa-solid fa-graduation-cap text-emerald-400"></i>
@@ -197,29 +181,24 @@
 </div>
 </aside>
 
-<!-- Main Content Wrapper (Right Side) -->
+<!-- Main Content Wrapper -->
 <div class="flex-1 min-w-0 flex flex-col min-h-screen">
-<!-- Main Container -->
 <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
 <!-- ================= HOME TAB ================= -->
 <div class="tab-content space-y-6" id="home">
-<!-- ================= HOME HERO ================= -->
 <section class="home-hero">
-<!-- Institute Photo in Full Backdrop -->
 <div class="institute-photo-wrap">
 <img alt="Institute Campus Backdrop" class="institute-photo" src="images/institute.jpg"/>
 </div>
-<!-- Hero Content: Text on Left, Faculty Photo on Right -->
 <div class="home-hero-content">
 <div class="home-hero-grid grid grid-cols-1 md:grid-cols-[1fr_215px] gap-8 items-center">
-<!-- Faculty Details (Left) -->
 <div class="max-w-[720px] order-2 md:order-1">
 <h1 class="home-serif text-4xl sm:text-5xl font-bold text-[#2A6B4C] leading-[1.05] tracking-tight">Dr. A. Suseelatha</h1>
 <div class="w-16 h-1 bg-[#2A6B4C] mt-4 mb-5 rounded-full"></div>
 <p class="home-serif text-[17px] sm:text-[18px] leading-[1.55] text-slate-800 max-w-[580px]">
-                                I am committed to application-oriented teaching that connects mathematical concepts with engineering and real-world problems while fostering a supportive learning environment that encourages critical thinking, mathematical modelling, and problem-solving. My research interests include time-series analysis, wavelet-based methods, and machine learning.
-                            </p>
+    I am committed to application-oriented teaching that connects mathematical concepts with engineering and real-world problems while fostering a supportive learning environment that encourages critical thinking, mathematical modelling, and problem-solving. My research interests include time-series analysis, wavelet-based methods, and machine learning.
+</p>
 <div class="flex flex-wrap gap-2.5 mt-6">
 <span class="px-3.5 py-1.5 rounded-full bg-[#2A6B4C]/10 text-[#2A6B4C] font-semibold text-xs border border-[#2A6B4C]/25">Time Series</span>
 <span class="px-3.5 py-1.5 rounded-full bg-[#2A6B4C]/10 text-[#2A6B4C] font-semibold text-xs border border-[#2A6B4C]/25">Forecasting Models</span>
@@ -227,7 +206,6 @@
 <span class="px-3.5 py-1.5 rounded-full bg-[#2A6B4C]/10 text-[#2A6B4C] font-semibold text-xs border border-[#2A6B4C]/25">Cubic Equations of State</span>
 </div>
 </div>
-<!-- Faculty Photo (Right) -->
 <div class="flex justify-center md:justify-end order-1 md:order-2">
 <div class="rounded-[22px] bg-white p-2 shadow-[0_14px_35px_rgba(42,107,76,0.22)] border-2 border-[#2A6B4C]/30 relative z-10 transition-transform duration-300 hover:scale-[1.02]">
 <img alt="Dr. A. Suseelatha" class="home-profile shadow-inner rounded-[16px]" src="images/photo.jpg"/>
@@ -236,14 +214,12 @@
 </div>
 </div>
 </section>
-<!-- Quote -->
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-5">
 <div class="home-quote rounded-2xl px-7 sm:px-12 py-7 sm:py-8 shadow-sm">
 <div class="flex items-start gap-5">
 <div class="text-5xl sm:text-6xl leading-none text-emerald-300 home-serif">“</div>
 <div class="flex-1">
 <p class="home-serif italic text-lg sm:text-xl leading-relaxed text-[#123568]">Mathematics is more than numbers and equations; it is a powerful tool for modelling reality, uncovering hidden patterns, and transforming real-world challenges into solvable problems.</p>
-<p class="home-serif text-right text-base sm:text-lg italic text-[#1d355b] mt-3"> </p>
 </div>
 </div>
 </div>
@@ -258,20 +234,12 @@
 <p class="text-slate-600 mt-2">Course syllabus organised unit-wise. Use the unit sections below to review the topics prescribed for the course.</p>
 </section>
 <section class="grid grid-cols-1 md:grid-cols-2 gap-5">
-<article class="bg-white rounded-2xl p-6 border border-amber-200 shadow-sm"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit I: Sequences, Series and Mean Value Theorems</h3><p class="text-sm text-slate-600">Sequence, infinite series, tests for convergence: Comparison test, Ratio test, Root test, Rolle’s Theorem,
-Lagrange’s and Cauchy’s mean value theorems; expansions of functions: Taylor’s and Maclaurin’s series.</p></article>
-<article class="bg-white rounded-2xl p-6 border border-orange-200 shadow-sm"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit II: Partial Differentiation</h3><p class="text-sm text-slate-600">Introduction to partial derivatives, total derivatives, change of variables, Jacobians, Taylor’s theorem for
-functions of two variables, Maxima and Minima of functions of two variables, Lagrange’s method of
-undetermined multipliers.</p></article>
-<article class="bg-white rounded-2xl p-6 border border-purple-200 shadow-sm"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit III: Multiple Integrals</h3><p class="text-sm text-slate-600">Double integrals, change of order of integration, double integration in polar coordinates, areas enclosed
-by plane curves, triple integrals and change of variables.</p></article>
-<article class="bg-white rounded-2xl p-6 border border-emerald-200 shadow-sm"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit IV: Solving Systems of Linear Equations</h3><p class="text-sm text-slate-600">Rank of a matrix (by echelon form and normal form), consistency of linear system of equations,
-eigenvalues and eigenvectors of a matrix, properties of eigenvalues.</p></article>
-<article class="bg-white rounded-2xl p-6 border border-rose-200 shadow-sm md:col-span-2"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit V: Cayley–Hamilton Theorem and Quadratic Forms</h3><p class="text-sm text-slate-600">Cayley-Hamilton theorem, finding the inverse and the power of a matrix by an application of the Cayley-
-Hamilton theorem, reduction to a diagonal form, reduction of a quadratic form to a canonical form, nature
-of the quadratic form.</p></article>
+<article class="bg-white rounded-2xl p-6 border border-amber-200 shadow-sm"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit I: Sequences, Series and Mean Value Theorems</h3><p class="text-sm text-slate-600">Sequence, infinite series, tests for convergence: Comparison test, Ratio test, Root test, Rolle’s Theorem, Lagrange’s and Cauchy’s mean value theorems; expansions of functions: Taylor’s and Maclaurin’s series.</p></article>
+<article class="bg-white rounded-2xl p-6 border border-orange-200 shadow-sm"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit II: Partial Differentiation</h3><p class="text-sm text-slate-600">Introduction to partial derivatives, total derivatives, change of variables, Jacobians, Taylor’s theorem for functions of two variables, Maxima and Minima of functions of two variables, Lagrange’s method of undetermined multipliers.</p></article>
+<article class="bg-white rounded-2xl p-6 border border-purple-200 shadow-sm"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit III: Multiple Integrals</h3><p class="text-sm text-slate-600">Double integrals, change of order of integration, double integration in polar coordinates, areas enclosed by plane curves, triple integrals and change of variables.</p></article>
+<article class="bg-white rounded-2xl p-6 border border-emerald-200 shadow-sm"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit IV: Solving Systems of Linear Equations</h3><p class="text-sm text-slate-600">Rank of a matrix (by echelon form and normal form), consistency of linear system of equations, eigenvalues and eigenvectors of a matrix, properties of eigenvalues.</p></article>
+<article class="bg-white rounded-2xl p-6 border border-rose-200 shadow-sm md:col-span-2"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit V: Cayley–Hamilton Theorem and Quadratic Forms</h3><p class="text-sm text-slate-600">Cayley-Hamilton theorem, finding the inverse and the power of a matrix by an application of the Cayley-Hamilton theorem, reduction to a diagonal form, reduction of a quadratic form to a canonical form, nature of the quadratic form.</p></article>
 </section>
-<p class="text-xs text-slate-500">Note: The unit descriptions are as per officially approved syllabus which is common for all braches.</p>
 </div>
 
 <!-- ================= LECTURE NOTES TAB ================= -->
@@ -283,121 +251,99 @@ of the quadratic form.</p></article>
 <p class="text-slate-600 mt-2 text-sm sm:text-base">Access unit-wise lecture notes, tutorials, quizzes, question banks, and assignments for the five core units.</p>
 </div>
 </div>
-<!-- 5 Units Grid with Distinct Colors & Dynamic Hover Effects -->
+
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Unit 1 (Amber Theme) -->
-<div class="bg-amber-50/60 rounded-3xl p-6 border border-amber-200/60 shadow-sm hover:bg-amber-100/80 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+
+<!-- Unit 01 -->
+<div class="bg-amber-50/60 rounded-3xl p-6 border border-amber-200/60 shadow-sm hover:bg-amber-100/80 hover:shadow-lg transition duration-300 flex flex-col justify-between">
 <div>
-<div class="flex justify-between items-center mb-4">
 <span class="text-xs font-bold bg-amber-200 text-amber-800 px-3 py-1 rounded-full">Unit 01</span>
-</div>
-<h3 class="text-lg font-bold text-slate-900 mb-6">Sequence, Series and Mean Value Theorems</h3>
+<h3 class="text-lg font-bold text-slate-900 my-4">Sequence, Series and Mean Value Theorems</h3>
 </div>
 <div class="space-y-2 pt-4 border-t border-amber-200/60 text-sm">
-<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" data-resource="unit1-notes" href="#">
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" href="Unit-I/unit1-notes.pdf" target="_blank" rel="noopener">
 <span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-500"></i> Lecture Notes</span>
-<i class="fa-solid fa-download text-xs text-slate-400"></i>
+<i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
 </a>
-<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" data-resource="unit1-Tutorial-1" href="#">
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" href="Unit-I/tutorial-1.pdf" target="_blank" rel="noopener">
 <span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-blue-600"></i> Tutorial-1</span>
-<i class="fa-solid fa-download text-xs text-slate-400"></i>
+<i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
 </a>
-<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" data-resource="unit1-Tutorial-2" href="#">
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" href="Unit-I/tutorial-2.pdf" target="_blank" rel="noopener">
 <span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-blue-600"></i> Tutorial-2</span>
-<i class="fa-solid fa-download text-xs text-slate-400"></i>
+<i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
 </a>
-<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" data-resource="unit1-Tutorial-3" href="#">
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" href="Unit-I/tutorial-3.pdf" target="_blank" rel="noopener">
 <span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-blue-600"></i> Tutorial-3</span>
-<i class="fa-solid fa-download text-xs text-slate-400"></i>
+<i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
 </a>
-<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" data-resource="unit1-Tutorial-4" href="#">
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" href="Unit-I/tutorial-4.pdf" target="_blank" rel="noopener">
 <span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-blue-600"></i> Tutorial-4</span>
-<i class="fa-solid fa-download text-xs text-slate-400"></i>
+<i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
 </a>
-<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" data-resource="unit1-Quiz for Practice" href="#">
-<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-purple-600"></i>Quiz</span>
-<i class="fa-solid fa-download text-xs text-slate-400"></i>
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" href="Unit-I/sequence-quiz.pdf" target="_blank" rel="noopener">
+<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-purple-600"></i> Quiz PDF Sheet</span>
+<i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
 </a>
 </div>
 </div>
-<!-- Unit 2 (Orange Theme) -->
-<div class="bg-orange-50/60 rounded-3xl p-6 border border-orange-200/60 shadow-sm hover:bg-orange-100/80 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+
+<!-- Unit 02 -->
+<div class="bg-orange-50/60 rounded-3xl p-6 border border-orange-200/60 shadow-sm hover:bg-orange-100/80 hover:shadow-lg transition duration-300 flex flex-col justify-between">
 <div>
-<div class="flex justify-between items-center mb-4">
 <span class="text-xs font-bold bg-orange-200 text-orange-800 px-3 py-1 rounded-full">Unit 02</span>
-</div>
-<h3 class="text-lg font-bold text-slate-900 mb-6">Partial Differentiation </h3>
+<h3 class="text-lg font-bold text-slate-900 my-4">Partial Differentiation</h3>
 </div>
 <div class="space-y-2 pt-4 border-t border-orange-200/60 text-sm">
-<a class="flex items-center justify-between text-slate-700 hover:text-orange-900 font-medium py-1.5 px-3 rounded-lg hover:bg-orange-200/50 transition" data-resource="unit2-notes" href="#">
+<a class="flex items-center justify-between text-slate-700 hover:text-orange-900 font-medium py-1.5 px-3 rounded-lg hover:bg-orange-200/50 transition" href="Unit-II/unit2-notes.pdf" target="_blank" rel="noopener">
 <span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-500"></i> Lecture Notes</span>
-<i class="fa-solid fa-download text-xs text-slate-400"></i>
-</a>
-<a class="flex items-center justify-between text-slate-700 hover:text-orange-900 font-medium py-1.5 px-3 rounded-lg hover:bg-orange-200/50 transition" data-resource="unit2-tutorials" href="#">
-<span class="flex items-center gap-2"><i class="fa-solid fa-list-check text-blue-600"></i> Tutorials &amp; Question Bank</span>
-<i class="fa-solid fa-arrow-right text-xs text-slate-400"></i>
+<i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
 </a>
 </div>
 </div>
-<!-- Unit 3 (Purple Theme) -->
-<div class="bg-purple-50/60 rounded-3xl p-6 border border-purple-200/60 shadow-sm hover:bg-purple-100/80 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+
+<!-- Unit 03 -->
+<div class="bg-purple-50/60 rounded-3xl p-6 border border-purple-200/60 shadow-sm hover:bg-purple-100/80 hover:shadow-lg transition duration-300 flex flex-col justify-between">
 <div>
-<div class="flex justify-between items-center mb-4">
 <span class="text-xs font-bold bg-purple-200 text-purple-800 px-3 py-1 rounded-full">Unit 03</span>
-</div>
-<h3 class="text-lg font-bold text-slate-900 mb-6">Multiple Integrals</h3>
+<h3 class="text-lg font-bold text-slate-900 my-4">Multiple Integrals</h3>
 </div>
 <div class="space-y-2 pt-4 border-t border-purple-200/60 text-sm">
-<a class="flex items-center justify-between text-slate-700 hover:text-purple-900 font-medium py-1.5 px-3 rounded-lg hover:bg-purple-200/50 transition" data-resource="unit3-notes" href="#">
+<a class="flex items-center justify-between text-slate-700 hover:text-purple-900 font-medium py-1.5 px-3 rounded-lg hover:bg-purple-200/50 transition" href="Unit-III/unit3-notes.pdf" target="_blank" rel="noopener">
 <span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-500"></i> Lecture Notes</span>
-<i class="fa-solid fa-download text-xs text-slate-400"></i>
-</a>
-<a class="flex items-center justify-between text-slate-700 hover:text-purple-900 font-medium py-1.5 px-3 rounded-lg hover:bg-purple-200/50 transition" data-resource="unit3-tutorials" href="#">
-<span class="flex items-center gap-2"><i class="fa-solid fa-list-check text-blue-600"></i> Tutorials &amp; Question Bank</span>
-<i class="fa-solid fa-arrow-right text-xs text-slate-400"></i>
+<i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
 </a>
 </div>
 </div>
-<!-- Unit 4 (Emerald Theme) -->
-<div class="bg-emerald-50/60 rounded-3xl p-6 border border-emerald-200/60 shadow-sm hover:bg-emerald-100/80 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+
+<!-- Unit 04 -->
+<div class="bg-emerald-50/60 rounded-3xl p-6 border border-emerald-200/60 shadow-sm hover:bg-emerald-100/80 hover:shadow-lg transition duration-300 flex flex-col justify-between">
 <div>
-<div class="flex justify-between items-center mb-4">
 <span class="text-xs font-bold bg-emerald-200 text-emerald-800 px-3 py-1 rounded-full">Unit 04</span>
-<span class="text-xs font-semibold text-emerald-700"></span>
-</div>
-<h3 class="text-lg font-bold text-slate-900 mb-6">Solving Systems of Linear Equations</h3>
+<h3 class="text-lg font-bold text-slate-900 my-4">Solving Systems of Linear Equations</h3>
 </div>
 <div class="space-y-2 pt-4 border-t border-emerald-200/60 text-sm">
-<a class="flex items-center justify-between text-slate-700 hover:text-emerald-900 font-medium py-1.5 px-3 rounded-lg hover:bg-emerald-200/50 transition" data-resource="unit4-notes" href="#">
+<a class="flex items-center justify-between text-slate-700 hover:text-emerald-900 font-medium py-1.5 px-3 rounded-lg hover:bg-emerald-200/50 transition" href="Unit-IV/unit4-notes.pdf" target="_blank" rel="noopener">
 <span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-500"></i> Lecture Notes</span>
-<i class="fa-solid fa-download text-xs text-slate-400"></i>
-</a>
-<a class="flex items-center justify-between text-slate-700 hover:text-emerald-900 font-medium py-1.5 px-3 rounded-lg hover:bg-emerald-200/50 transition" data-resource="unit4-tutorials" href="#">
-<span class="flex items-center gap-2"><i class="fa-solid fa-list-check text-blue-600"></i> Tutorials &amp; Question Bank</span>
-<i class="fa-solid fa-arrow-right text-xs text-slate-400"></i>
+<i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
 </a>
 </div>
 </div>
-<!-- Unit 5 (Rose Theme) -->
-<div class="bg-rose-50/60 rounded-3xl p-6 border border-rose-200/60 shadow-sm hover:bg-rose-100/80 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col justify-between md:col-span-2 lg:col-span-1">
+
+<!-- Unit 05 -->
+<div class="bg-rose-50/60 rounded-3xl p-6 border border-rose-200/60 shadow-sm hover:bg-rose-100/80 hover:shadow-lg transition duration-300 flex flex-col justify-between">
 <div>
-<div class="flex justify-between items-center mb-4">
 <span class="text-xs font-bold bg-rose-200 text-rose-800 px-3 py-1 rounded-full">Unit 05</span>
-<span class="text-xs font-semibold text-rose-700"></span>
-</div>
-<h3 class="text-lg font-bold text-slate-900 mb-6">Cayley-Hamilton Theorem and Quadratic Forms</h3>
+<h3 class="text-lg font-bold text-slate-900 my-4">Cayley-Hamilton Theorem &amp; Quadratic Forms</h3>
 </div>
 <div class="space-y-2 pt-4 border-t border-rose-200/60 text-sm">
-<a class="flex items-center justify-between text-slate-700 hover:text-rose-900 font-medium py-1.5 px-3 rounded-lg hover:bg-rose-200/50 transition" data-resource="unit5-notes" href="#">
+<a class="flex items-center justify-between text-slate-700 hover:text-rose-900 font-medium py-1.5 px-3 rounded-lg hover:bg-rose-200/50 transition" href="Unit-V/unit5-notes.pdf" target="_blank" rel="noopener">
 <span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-500"></i> Lecture Notes</span>
-<i class="fa-solid fa-download text-xs text-slate-400"></i>
-</a>
-<a class="flex items-center justify-between text-slate-700 hover:text-rose-900 font-medium py-1.5 px-3 rounded-lg hover:bg-rose-200/50 transition" data-resource="unit5-tutorials" href="#">
-<span class="flex items-center gap-2"><i class="fa-solid fa-list-check text-blue-600"></i>Tutorials &amp; Question Bank</span>
-<i class="fa-solid fa-arrow-right text-xs text-slate-400"></i>
+<i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
 </a>
 </div>
 </div>
+
 </div>
 </div>
 
@@ -405,64 +351,184 @@ of the quadratic form.</p></article>
 <div class="tab-content hidden space-y-8" id="lectureschedule">
 <section class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm">
   <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5">
-    <div class="flex items-start gap-4">
-      <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
-        <i class="fa-solid fa-calendar-days text-xl"></i>
-      </div>
-      <div>
+    <div>
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Lecture Schedule</h2>
-        <p class="text-slate-600 mt-1">Calculus and Linear Algebra · Common to all branches · Academic Year 2026–2027</p>
-        <p class="text-sm text-slate-500 mt-2">The official lecture schedule is provided as a PDF document below.</p>
-      </div>
+        <p class="text-slate-600 mt-1">Calculus and Linear Algebra · Academic Year 2026–2027</p>
     </div>
     <div class="flex flex-wrap gap-3">
-      <a href="Lecture%20Schedule_CAL_LA_2026-2027.pdf" target="_blank" rel="noopener"
-         class="inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition">
+      <a href="Lecture%20Schedule_CAL_LA_2026-2027.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-emerald-700 text-white px-4 py-2.5 rounded-xl text-sm font-semibold">
         <i class="fa-solid fa-arrow-up-right-from-square"></i> Open PDF
       </a>
-      <a href="Lecture%20Schedule_CAL_LA_2026-2027.pdf" download
-         class="inline-flex items-center justify-center gap-2 border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-4 py-2.5 rounded-xl text-sm font-semibold transition">
-        <i class="fa-solid fa-download"></i> Download Schedule
+      <a href="Lecture%20Schedule_CAL_LA_2026-2027.pdf" download class="inline-flex items-center gap-2 border border-emerald-200 bg-emerald-50 text-emerald-800 px-4 py-2.5 rounded-xl text-sm font-semibold">
+        <i class="fa-solid fa-download"></i> Download
       </a>
     </div>
   </div>
   <div class="rounded-2xl border border-slate-200 overflow-hidden bg-slate-50">
-    <iframe
-      src="Lecture%20Schedule_CAL_LA_2026-2027.pdf"
-      title="Calculus and Linear Algebra Lecture Schedule 2026–2027"
-      class="w-full"
-      style="height: min(78vh, 900px); min-height: 620px;"
-      loading="lazy">
-      Your browser cannot display the PDF inline.
-      <a href="Lecture%20Schedule_CAL_LA_2026-2027.pdf">Open the lecture schedule PDF</a>.
-    </iframe>
+    <iframe src="Lecture%20Schedule_CAL_LA_2026-2027.pdf" class="w-full" style="height: min(78vh, 900px); min-height: 620px;" loading="lazy"></iframe>
   </div>
-  <p class="text-xs text-slate-500 mt-3">If the document does not appear in the preview, use Open PDF or Download Schedule above.</p>
 </section>
 </div>
 
 <!-- ================= ASSIGNMENTS TAB ================= -->
 <div class="tab-content hidden space-y-8" id="assignments">
   <section class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm">
+    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Assignments</h2>
+    <a class="inline-flex items-center gap-2 text-emerald-700 font-semibold hover:underline" href="Unit-I/sequence-and-series-quiz-12-sets_final.pdf" target="_blank" rel="noopener">
+        <i class="fa-solid fa-file-pdf"></i> Download Unit-I Question Sets PDF
+    </a>
+  </section>
+</div>
+
+<!-- ================= UNIT-WISE QUIZZES TAB ================= -->
+<div class="tab-content hidden space-y-8" id="quizzes">
+  
+  <section class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm">
     <div class="flex items-center gap-4">
-      <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
-        <i class="fa-solid fa-file-pen text-xl"></i>
+      <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-xl">
+        <i class="fa-solid fa-clipboard-question"></i>
       </div>
       <div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Assignments</h2>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Unit-wise Self-Assessment Quizzes</h2>
+        <p class="text-slate-600 text-sm mt-1">Practice questions compiled directly from PDF question sets in your repository.</p>
       </div>
     </div>
+
+    <!-- Unit Selection Pills -->
+    <div class="flex flex-wrap gap-2 mt-6 pt-6 border-t border-slate-100">
+      <button onclick="switchQuizUnit('seq')" id="btn-seq" class="unit-quiz-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#2A6B4C] text-white shadow-sm transition">Unit I: Sequences Quiz</button>
+      <button onclick="switchQuizUnit('series')" id="btn-series" class="unit-quiz-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Unit I: Series Quiz</button>
+      <button onclick="switchQuizUnit('u2')" id="btn-u2" class="unit-quiz-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Unit II</button>
+      <button onclick="switchQuizUnit('u3')" id="btn-u3" class="unit-quiz-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Unit III</button>
+      <button onclick="switchQuizUnit('u4')" id="btn-u4" class="unit-quiz-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Unit IV</button>
+      <button onclick="switchQuizUnit('u5')" id="btn-u5" class="unit-quiz-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Unit V</button>
+    </div>
   </section>
+
+  <!-- Container for Quiz Panels -->
+  <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm max-w-4xl mx-auto">
+    
+    <!-- UNIT I: SEQUENCES QUIZ -->
+    <div id="quiz-seq" class="quiz-panel space-y-6">
+      <div class="flex items-center justify-between border-b pb-3">
+        <h3 class="text-xl font-bold text-slate-900">Unit I: Sequences Practice Quiz (10 Questions)</h3>
+        <a href="Unit-I/sequence-quiz.pdf" target="_blank" rel="noopener" class="text-xs text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+          <i class="fa-solid fa-file-pdf"></i> View Source PDF
+        </a>
+      </div>
+      <form id="form-seq" class="space-y-5">
+        
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q1. Determine the behavior and limit of a_n = n / (n+1) as n → ∞:</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq1" value="A"> (A) Convergent with limit = 1</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq1" value="B"> (B) Convergent with limit = 0</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq1" value="C"> (C) Divergent (approaches +∞)</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq1" value="D"> (D) Oscillatory</label>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q2. Evaluate the long-term behavior of the sequence a_n = (2^n - 1) / 2^n:</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq2" value="A"> (A) Convergent with limit = 0</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq2" value="B"> (B) Convergent with limit = 1</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq2" value="C"> (C) Divergent to +∞</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq2" value="D"> (D) Oscillatory between 0 and 1</label>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q3. What is the limit of a_n = (2^n - 1) / 3^n as n → ∞?</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq3" value="A"> (A) Convergent with limit = 0</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq3" value="B"> (B) Convergent with limit = 2/3</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq3" value="C"> (C) Convergent with limit = 1</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq3" value="D"> (D) Divergent to +∞</label>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q4. Find the limit of the trigonometric sequence a_n = n * sin(1/n) as n → ∞:</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq4" value="A"> (A) Convergent with limit = 0</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq4" value="B"> (B) Convergent with limit = 1</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq4" value="C"> (C) Convergent with limit = π</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq4" value="D"> (D) Divergent / Undefined</label>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">Q5. Determine the convergence or divergence of rational sequence a_n = (n+3) / (n^2 + 5n + 6):</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq5" value="A"> (A) Convergent with limit = 0</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq5" value="B"> (B) Convergent with limit = 1</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq5" value="C"> (C) Convergent with limit = 1/2</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq5" value="D"> (D) Divergent to +∞</label>
+          </div>
+        </div>
+
+        <button type="button" onclick="gradeUnitQuiz('seq', {sq1:'A', sq2:'B', sq3:'A', sq4:'B', sq5:'A'})" class="w-full bg-[#2A6B4C] hover:bg-[#22573e] text-white font-bold py-3 rounded-xl transition shadow-md">Submit Sequences Quiz</button>
+      </form>
+    </div>
+
+    <!-- UNIT I: SERIES QUIZ -->
+    <div id="quiz-series" class="quiz-panel hidden space-y-6">
+      <div class="flex items-center justify-between border-b pb-3">
+        <h3 class="text-xl font-bold text-slate-900">Unit I: Infinite Series Convergence Quiz</h3>
+        <a href="Unit-I/sequence-and-series-quiz-12-sets_final.pdf" target="_blank" rel="noopener" class="text-xs text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+          <i class="fa-solid fa-file-pdf"></i> View Source PDF
+        </a>
+      </div>
+      <form id="form-series" class="space-y-5">
+        <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
+          <p class="font-semibold text-slate-800 text-sm">1. The infinite series ∑ [n / (n^3 + 4)] is:</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr1" value="convergent"> Convergent</label>
+            <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr1" value="divergent"> Divergent</label>
+          </div>
+        </div>
+        <button type="button" onclick="gradeUnitQuiz('series', {sr1:'convergent'})" class="w-full bg-[#2A6B4C] hover:bg-[#22573e] text-white font-bold py-3 rounded-xl transition shadow-md">Submit Series Quiz</button>
+      </form>
+    </div>
+
+    <!-- OTHER UNITS -->
+    <div id="quiz-u2" class="quiz-panel hidden space-y-6">
+      <h3 class="text-xl font-bold text-slate-900 border-b pb-3">Unit II: Partial Differentiation Quiz</h3>
+      <p class="text-sm text-slate-600">Review Taylor's Theorem and Jacobians before attempting.</p>
+    </div>
+
+    <div id="quiz-u3" class="quiz-panel hidden space-y-6">
+      <h3 class="text-xl font-bold text-slate-900 border-b pb-3">Unit III: Multiple Integrals Quiz</h3>
+      <p class="text-sm text-slate-600">Covers Double and Triple Integrals.</p>
+    </div>
+
+    <div id="quiz-u4" class="quiz-panel hidden space-y-6">
+      <h3 class="text-xl font-bold text-slate-900 border-b pb-3">Unit IV: Systems of Linear Equations Quiz</h3>
+      <p class="text-sm text-slate-600">Covers Rank, Eigenvalues, and Matrix Consistency.</p>
+    </div>
+
+    <div id="quiz-u5" class="quiz-panel hidden space-y-6">
+      <h3 class="text-xl font-bold text-slate-900 border-b pb-3">Unit V: Cayley-Hamilton Theorem Quiz</h3>
+      <p class="text-sm text-slate-600">Covers Quadratic Forms and Matrix Diagonalization.</p>
+    </div>
+
+    <!-- Score Feedback Banner -->
+    <div id="quizScoreBox" class="hidden mt-6 p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
+      <h4 class="text-lg font-bold text-emerald-900">Quiz Completion Summary</h4>
+      <p id="quizScoreResult" class="text-2xl font-extrabold text-[#2A6B4C] my-1.5"></p>
+      <p id="quizScoreNote" class="text-xs text-slate-600"></p>
+    </div>
+
+  </div>
 </div>
 
 <!-- ================= CONTACT TAB ================= -->
 <div class="tab-content hidden space-y-8" id="contact">
 <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-sm max-w-xl mx-auto text-center space-y-3">
-<div class="w-16 h-16 rounded-2xl bg-blue-900 text-white flex items-center justify-center font-bold text-2xl shadow-md mx-auto mb-4">
-                    ASL
-                </div>
+<div class="w-16 h-16 rounded-2xl bg-blue-900 text-white flex items-center justify-center font-bold text-2xl shadow-md mx-auto mb-4">ASL</div>
 <h2 class="text-2xl font-bold text-slate-900">Dr. A.Suseelatha</h2>
-<a class="inline-block text-blue-600 hover:underline font-semibold text-base" href="mailto:rajeshbabu@gvpcew.ac.in">suseelatha.a@gvpcew.ac.in</a><div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left"><div class="bg-slate-50 rounded-xl p-3"><div class="text-[10px] uppercase font-bold text-slate-400">Scopus ID</div><div class="text-sm font-semibold text-slate-800">56318751000</div></div><div class="bg-slate-50 rounded-xl p-3"><div class="text-[10px] uppercase font-bold text-slate-400">Researcher ID</div><div class="text-sm font-semibold text-slate-800">O-3048-2015</div></div></div>
+<a class="inline-block text-blue-600 hover:underline font-semibold text-base" href="mailto:suseelatha.a@gvpcew.ac.in">suseelatha.a@gvpcew.ac.in</a>
 </div>
 </div>
 </main>
@@ -470,110 +536,87 @@ of the quadratic form.</p></article>
 <!-- Footer -->
 <footer class="bg-white/60 backdrop-blur-md border-t border-slate-200 mt-20 py-8 text-center text-xs text-slate-500">
 <div class="max-w-7xl mx-auto px-4 flex flex-col items-center gap-4">
-<div class="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-<span class="w-9 h-9 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center">
-<i class="fa-solid fa-eye"></i>
-</span>
-<div class="text-left">
-<span class="block text-[10px] uppercase tracking-wider font-bold text-slate-400">Visitors</span>
-<div class="counterapi font-bold text-slate-800 text-sm" key="faculty-portal-visits" label="visits" style="min-height:20px"></div>
-</div>
-</div>
 <p>© 2026 Dr. A.Suseelatha. All Rights Reserved. Built for Calculus and Linear Algebra.</p>
 </div>
 </footer>
 </div>
 
-<!-- Visitor counter -->
-<script async="" src="https://counterapi.com/c.js"></script>
-
-<!-- ================= GOOGLE DRIVE RESOURCE LINKS ================= -->
-<script>
-        const DRIVE_LINKS = {
-            "assignments-folder": "https://drive.google.com/drive/folders/1PZg8NtutHK8r11T0QelbWL1LNfurxkWZ?usp=sharing",
-            "unit1-notes": "https://drive.google.com/file/d/1M0Y0Ds4TbVxylzjAKN0QFDwqMkTvEOqA/view?usp=sharing",
-            "unit1-Tutorial-1": "https://drive.google.com/file/d/1ankUX1MS9yjPreJs9VSW6wQWn_5jTkF7/view?usp=sharing",
-            "unit1-Tutorial-2": "https://drive.google.com/file/d/1791yXhfGEgLDgzPCALguLupsY8iIRkbV/view?usp=sharing",
-            "unit1-Tutorial-3": "https://drive.google.com/file/d/1coNqpLf6LRLmmtyIJlldfRcVCNzapfyy/view?usp=sharing",
-            "unit1-Tutorial-4": "https://drive.google.com/file/d/1_v3gZDVg1a4kcd_20-qaxmkcQovMicr_/view?usp=sharing",
-            "unit1-Quiz for Practice": "https://drive.google.com/file/d/1UYlszjOAOCCbqnXSDtNunNJhoUpyiVeH/view?usp=sharing",
-           };
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('a[data-resource]').forEach(link => {
-                const key = link.dataset.resource;
-                const url = DRIVE_LINKS[key];
-                if (url) {
-                    link.href = url;
-                    link.target = '_blank';
-                    link.rel = 'noopener noreferrer';
-                } else {
-                    link.href = 'javascript:void(0)';
-                    link.addEventListener('click', () => {
-                        alert('This resource will be available soon. Please check back after the Google Drive link is added.');
-                    });
-                    link.classList.add('opacity-70');
-                }
-            });
-        });
-    </script>
-<!-- Interactive Scripts -->
+<!-- ================= TAB NAVIGATION & QUIZ SCRIPT ================= -->
 <script>
         function switchTab(tabId) {
-            // Hide all tab panels
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             
-            // Reset all sidebar oval buttons
             document.querySelectorAll('.nav-btn').forEach(el => {
-                el.classList.remove(
-                    'bg-gradient-to-r', 'from-emerald-500', 'to-teal-600', 'bg-emerald-500',
-                    'text-white', 'font-bold', 'shadow-md', 'border', 'border-emerald-200/40'
-                );
-                el.classList.add('text-white/85', 'hover:bg-white/10', 'font-medium');
+                el.className = "nav-btn w-full flex items-center gap-3.5 px-4 py-3 text-sm rounded-full font-medium text-white/85 hover:text-white hover:bg-white/10 transition-all duration-200 text-left";
             });
             
-            // Show chosen tab
             const target = document.getElementById(tabId);
             if(target) {
                 target.classList.remove('hidden');
             }
             
-            // Highlight active sidebar button (emerald-teal gradient oval pill)
             const activeBtn = document.getElementById('nav-' + tabId);
             if(activeBtn) {
-                activeBtn.classList.remove('text-white/85', 'hover:bg-white/10', 'font-medium');
-                activeBtn.classList.add(
-                    'bg-gradient-to-r', 'from-emerald-500', 'to-teal-600',
-                    'text-white', 'font-bold', 'shadow-md', 'border', 'border-emerald-200/40'
-                );
+                activeBtn.className = "nav-btn w-full flex items-center gap-3.5 px-4.5 py-3 text-sm rounded-full font-bold text-white bg-gradient-to-r from-emerald-500 to-teal-600 shadow-md border border-emerald-200/40 transition-all duration-200 text-left";
             }
 
-            // Close mobile sidebar if open
             if (window.innerWidth < 768) {
                 const sidebar = document.getElementById('sidebar-nav');
                 const overlay = document.getElementById('sidebar-overlay');
-                if (sidebar && !sidebar.classList.contains('-translate-x-full')) {
-                    sidebar.classList.add('-translate-x-full');
-                }
-                if (overlay && !overlay.classList.contains('hidden')) {
-                    overlay.classList.add('hidden');
-                }
+                if(sidebar) sidebar.classList.add('-translate-x-full');
+                if(overlay) overlay.classList.add('hidden');
             }
-
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function toggleMobileMenu() {
             const sidebar = document.getElementById('sidebar-nav');
             const overlay = document.getElementById('sidebar-overlay');
-            if (sidebar) {
-                sidebar.classList.toggle('-translate-x-full');
-            }
-            if (overlay) {
-                overlay.classList.toggle('hidden');
-            }
+            if (sidebar) sidebar.classList.toggle('-translate-x-full');
+            if (overlay) overlay.classList.toggle('hidden');
         }
 
-    </script>
+        function switchQuizUnit(unitId) {
+            document.querySelectorAll('.quiz-panel').forEach(panel => panel.classList.add('hidden'));
+            document.querySelectorAll('.unit-quiz-btn').forEach(btn => {
+                btn.className = "unit-quiz-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
+            });
+
+            const panel = document.getElementById('quiz-' + unitId);
+            if(panel) panel.classList.remove('hidden');
+
+            const activeBtn = document.getElementById('btn-' + unitId);
+            if(activeBtn) {
+                activeBtn.className = "unit-quiz-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#2A6B4C] text-white shadow-sm transition";
+            }
+            
+            const scoreBox = document.getElementById('quizScoreBox');
+            if(scoreBox) scoreBox.classList.add('hidden');
+        }
+
+        function gradeUnitQuiz(unitId, keyAnswers) {
+            const form = document.getElementById('form-' + unitId);
+            let score = 0;
+            let total = Object.keys(keyAnswers).length;
+
+            for (let key in keyAnswers) {
+                const selected = form.elements[key] ? form.elements[key].value : null;
+                if (selected === keyAnswers[key]) {
+                    score++;
+                }
+            }
+
+            const box = document.getElementById('quizScoreBox');
+            const scoreText = document.getElementById('quizScoreResult');
+            const noteText = document.getElementById('quizScoreNote');
+
+            box.classList.remove('hidden');
+            scoreText.innerText = `Score: ${score} / ${total}`;
+            noteText.innerText = (score === total) 
+                ? "Outstanding! You scored 100% on this quiz." 
+                : "Good attempt! Review the step-by-step solutions to practice.";
+            box.scrollIntoView({ behavior: 'smooth' });
+        }
+</script>
 </body>
 </html>
