@@ -177,7 +177,13 @@
 <i class="fa-solid fa-graduation-cap text-emerald-400"></i>
 <span>Department of Mathematics</span>
 </div>
-<p class="text-[11px] leading-relaxed text-emerald-200/70">Faculty &amp; Student Learning Portal</p>
+<p class="text-[11px] leading-relaxed text-emerald-200/70 mb-3">Faculty &amp; Student Learning Portal</p>
+
+<!-- Live Visitor Counter Badge -->
+<div class="mt-2 p-2.5 bg-black/20 rounded-xl border border-white/10 flex items-center justify-between text-[11px] text-emerald-100">
+<span class="flex items-center gap-1.5"><i class="fa-solid fa-eye text-emerald-300"></i> Visitors:</span>
+<span id="visitor-count" class="font-bold text-white bg-emerald-700/80 px-2 py-0.5 rounded-md">...</span>
+</div>
 </div>
 </aside>
 
@@ -631,7 +637,7 @@
 </footer>
 </div>
 
-<!-- ================= TAB NAVIGATION & QUIZ SCRIPT ================= -->
+<!-- ================= TAB NAVIGATION, QUIZ & VISITOR COUNTER SCRIPT ================= -->
 <script>
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
@@ -707,6 +713,18 @@
                 : "Good attempt! Review the step-by-step solutions to practice.";
             box.scrollIntoView({ behavior: 'smooth' });
         }
+
+        // Live Visitor Counter Fetch
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('https://api.countapi.xyz/hit/dr-suseelatha-portal/visits')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('visitor-count').innerText = data.value;
+                })
+                .catch(() => {
+                    document.getElementById('visitor-count').innerText = '1+';
+                });
+        });
 </script>
 </body>
 </html>
