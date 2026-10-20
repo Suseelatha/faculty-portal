@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dr. A. Suseelatha| Faculty Portal</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2A6B4C',
+                        emerald: {
+                            50: '#f2f8f5',
+                            100: '#e3efe8',
+                            200: '#c8dfd3',
+                            300: '#9ec4b1',
+                            400: '#5c9679',
+                            500: '#3a7d5b',
+                            600: '#2A6B4C',
+                            700: '#23573e',
+                            800: '#1e4633',
+                            900: '#1a3b2b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<!-- FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        
+        .tab-content { animation: fadeIn .35s ease-out; }
+        @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+        ::selection { background:#dbeafe; color:#172554; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f7faf8;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(42, 107, 76, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(42, 107, 76, 0.07) 0%, transparent 45%),
+                url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22460%22%20height%3D%22460%22%20viewBox%3D%220%200%20460%20460%22%20fill%3D%22none%22%3E%0A%20%20%3Cg%20fill%3D%22%232A6B4C%22%20opacity%3D%220.065%22%20font-family%3D%22Cambria%20Math%2C%20KaTeX_Main%2C%20Georgia%2C%20%27Times%20New%20Roman%27%2C%20serif%22%20font-style%3D%22italic%22%3E%0A%20%20%20%20%3C%21--%20Row%201%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2255%22%20font-size%3D%2224%22%3E%E2%88%AB%20f%28x%29%20dx%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%2260%22%20font-size%3D%2234%22%3E%E2%88%91%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%22240%22%20y%3D%2242%22%20font-size%3D%2213%22%3E%E2%88%9E%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%22240%22%20y%3D%2274%22%20font-size%3D%2211%22%3En%3D1%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%2255%22%20font-size%3D%2222%22%3Edet%28A%29%20%E2%89%A0%200%3C/text%3E%0A%20%20%20%20%0A%20%20%20%20%3C%21--%20Row%202%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%22125%22%20font-size%3D%2220%22%3Elim%20%5Bx%E2%86%920%5D%20%28sin%20x%20/%20x%29%20%3D%201%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22120%22%20font-size%3D%2223%22%3Ee%5E%28i%CF%80%29%20%2B%201%20%3D%200%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%22145%22%20font-size%3D%2228%22%3E%E2%88%9E%3C/text%3E%0A%20%20%20%20%0A%20%20%20%20%3C%21--%20Row%203%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2230%22%20y%3D%22200%22%20font-size%3D%2222%22%3E%E2%88%82%C2%B2u/%E2%88%82x%C2%B2%20%2B%20%E2%88%82%C2%B2u/%E2%88%82y%C2%B2%20%3D%200%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%22305%22%20y%3D%22195%22%20font-size%3D%2222%22%3EAx%20%3D%20%CE%BBx%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%22225%22%20font-size%3D%2219%22%3E%E2%88%87%20%C2%B7%20F%20%3D%20div%20F%3C/text%3E%0A%20%20%20%20%0A%20%20%20%20%3C%21--%20Row%204%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2250%22%20y%3D%22280%22%20font-size%3D%2224%22%3E%E2%88%AE_C%20%28P%20dx%20%2B%20Q%20dy%29%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%22260%22%20y%3D%22275%22%20font-size%3D%2221%22%3Edy/dx%20%3D%20f%27%28x%29%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%22380%22%20y%3D%22270%22%20font-size%3D%2220%22%3E%CE%BB%20%E2%88%88%20%E2%84%9D%3C/text%3E%0A%20%20%20%20%0A%20%20%20%20%3C%21--%20Row%205%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2230%22%20y%3D%22355%22%20font-size%3D%2220%22%3Erank%28A%29%20%2B%20nullity%28A%29%20%3D%20n%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22345%22%20font-size%3D%2222%22%3E%E2%88%9A%28x%C2%B2%20%2B%20y%C2%B2%20%2B%20z%C2%B2%29%3C/text%3E%0A%20%20%20%20%0A%20%20%20%20%3C%21--%20Row%206%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22420%22%20font-size%3D%2222%22%3E%E2%9F%A8u%2C%20v%E2%9F%A9%20%3D%20u%E1%B5%80v%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%22425%22%20font-size%3D%2225%22%3E%E2%88%AC_R%20f%28x%2Cy%29%20dA%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%22385%22%20y%3D%22415%22%20font-size%3D%2220%22%3E%CF%80%2C%20%CE%B8%2C%20%CF%86%3C/text%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: auto, auto, 460px 460px;
+            background-attachment: fixed;
+        }
+        .tab-content { animation: fadeUp .35s ease both; }
+        @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+        .academic-glow { box-shadow: 0 20px 60px rgba(15, 23, 42, .12); }
+        .metric-card { transition: transform .25s ease, box-shadow .25s ease; }
+        .metric-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(15,23,42,.08); }
+        .profile-photo { object-position: center top; }
+        .section-kicker { letter-spacing: .14em; }
+        .tag { display:inline-flex; padding:.45rem .7rem; border-radius:999px; background:#f1f5f9; border:1px solid #e2e8f0; font-size:.72rem; font-weight:600; color:#334155; }
+    
+        .home-serif { font-family: Georgia, 'Times New Roman', serif; }
+        .home-hero {
+            position: relative;
+            min-height: 480px;
+            overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 12px 35px rgba(42, 107, 76, 0.08);
+            border: 1px solid rgba(42, 107, 76, 0.22);
+            background: #ffffff;
+        }
+        .institute-photo-wrap {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .institute-photo-wrap::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.90) 50%, rgba(244, 250, 246, 0.78) 100%);
+            backdrop-filter: blur(1.5px);
+            pointer-events: none;
+        }
+        .institute-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            filter: saturate(1.05) brightness(0.92);
+        }
+        .home-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 38px 32px 36px;
+        }
+        .home-profile {
+            width: 185px;
+            height: 245px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 16px;
+        }
+        .home-quote {
+            background: linear-gradient(135deg, rgba(244, 250, 246, 0.95), rgba(232, 245, 238, 0.95));
+            border: 1px solid rgba(42, 107, 76, 0.22);
+            backdrop-filter: blur(4px);
+        }
+        @media (max-width: 900px) {
+            .home-profile { width: 175px; height: 230px; }
+            .home-hero-content { padding: 32px 24px; }
+        }
+        @media (max-width: 700px) {
+            .home-hero { min-height: auto; }
+            .institute-photo-wrap::after {
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.96) 100%);
+            }
+            .home-hero-content { padding: 30px 18px; }
+        }
+
+        .notification-ticker .ticker-track { display:inline-block; animation:tickerMove 22s linear infinite; padding-left:100%; }
+        .notification-ticker:hover .ticker-track { animation-play-state:paused; }
+        @keyframes tickerMove { from { transform:translateX(0); } to { transform:translateX(-100%); } }
+</style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col md:flex-row">
+<!-- Navigation Header -->
+<!-- Mobile Header Bar (Only visible on mobile screens) -->
+<div class="md:hidden sticky top-0 z-40 bg-[#2A6B4C] border-b border-[#1f523a] px-4 py-3.5 flex items-center justify-between shadow-md">
+<div>
+<span class="block font-bold text-white text-lg leading-tight home-serif">Dr. A. Suseelatha</span>
+<span class="block text-emerald-100/80 text-[11px]">Assistant Professor in Mathematics</span>
+</div>
+<button aria-label="Toggle Menu" class="p-2.5 text-white/90 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition" onclick="toggleMobileMenu()">
+<i class="fa-solid fa-bars text-lg"></i>
+</button>
+</div>
+<!-- Mobile Sidebar Dark Backdrop Overlay -->
+<div class="fixed inset-0 bg-slate-900/60 z-40 hidden md:hidden backdrop-blur-sm transition-opacity" id="sidebar-overlay" onclick="toggleMobileMenu()"></div>
+<!-- Left Sidebar Navigation -->
+<aside class="fixed md:sticky top-0 inset-y-0 left-0 z-50 w-72 lg:w-80 bg-[#2A6B4C] border-r border-[#1f523a] text-white flex flex-col justify-between p-6 shadow-2xl md:shadow-lg transition-transform duration-300 transform -translate-x-full md:translate-x-0 h-screen overflow-y-auto shrink-0" id="sidebar-nav">
+<!-- Faculty Branding -->
+<div>
+<div class="flex items-center justify-between pb-6 border-b border-[#1f523a]/60 mb-6">
+<div class="flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center font-bold text-lg text-emerald-100 shadow-inner home-serif">
+                        AS
+                    </div>
+<div>
+<h2 class="font-bold text-white text-xl leading-tight tracking-tight home-serif">Dr. A. Suseelatha</h2>
+<p class="text-emerald-100/80 text-xs mt-0.5 tracking-wide">Asst. Professor in Mathematics</p>
+</div>
+</div>
+<!-- Mobile Close Button -->
+<button class="md:hidden text-white/70 hover:text-white p-2" onclick="toggleMobileMenu()">
+<i class="fa-solid fa-xmark text-xl"></i>
+</button>
+</div>
+<!-- Vertical Oval Tabs Navigation -->
+<p class="text-[11px] font-bold uppercase tracking-wider text-emerald-200/70 px-3 mb-2.5">Navigation Menu</p>
+<nav class="flex flex-col gap-2">
+<button class="nav-btn w-full flex items-center gap-3.5 px-4.5 py-3 text-sm rounded-full font-bold text-white bg-gradient-to-r from-[#2A6B4C] to-[#3d8c67] shadow-md border border-emerald-200/40 transition-all duration-200 text-left" id="nav-home" onclick="switchTab('home')">
+<i class="fa-solid fa-house w-5 text-center text-sm"></i>
+<span>Home</span>
+</button>
+<button class="nav-btn w-full flex items-center gap-3.5 px-4 py-3 text-sm rounded-full font-medium text-white/85 hover:text-white hover:bg-white/10 transition-all duration-200 text-left" id="nav-syllabus" onclick="switchTab('syllabus')"><i class="fa-solid fa-list-check w-5 text-center text-sm"></i><span>Syllabus</span></button><button class="nav-btn w-full flex items-center gap-3.5 px-4 py-3 text-sm rounded-full font-medium text-white/85 hover:text-white hover:bg-white/10 transition-all duration-200 text-left" id="nav-lecturenotes" onclick="switchTab('lecturenotes')">
+<i class="fa-solid fa-book-open w-5 text-center text-sm"></i>
+<span>Lecture Notes</span>
+</button>
+<button class="nav-btn w-full flex items-center gap-3.5 px-4 py-3 text-sm rounded-full font-medium text-white/85 hover:text-white hover:bg-white/10 transition-all duration-200 text-left" id="nav-lectureschedule" onclick="switchTab('lectureschedule')">
+<i class="fa-solid fa-calendar-days w-5 text-center text-sm"></i>
+<span>Lecture Schedule</span>
+</button>
+<button class="nav-btn w-full flex items-center gap-3.5 px-4 py-3 text-sm rounded-full font-medium text-white/85 hover:text-white hover:bg-white/10 transition-all duration-200 text-left" id="nav-assignments" onclick="switchTab('assignments')">
+<i class="fa-solid fa-file-pen w-5 text-center text-sm"></i>
+<span>Assignments</span>
+</button>
+<button class="nav-btn w-full flex items-center gap-3.5 px-4 py-3 text-sm rounded-full font-medium text-white/85 hover:text-white hover:bg-white/10 transition-all duration-200 text-left" id="nav-contact" onclick="switchTab('contact')">
+<i class="fa-solid fa-address-book w-5 text-center text-sm"></i>
+<span>Contact</span>
+</button>
+</nav>
+</div>
+<!-- Sidebar Bottom Info -->
+<div class="pt-6 border-t border-[#1f523a]/60 text-xs text-emerald-100/70">
+<div class="flex items-center gap-2 mb-1.5 text-white/90 font-medium">
+<i class="fa-solid fa-graduation-cap text-emerald-400"></i>
+<span>Department of Mathematics</span>
+</div>
+<p class="text-[11px] leading-relaxed text-emerald-200/70">Faculty &amp; Student Learning Portal</p>
+</div>
+</aside>
+
+<!-- Main Content Wrapper (Right Side) -->
+<div class="flex-1 min-w-0 flex flex-col min-h-screen">
+<!-- Main Container -->
+<main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+<!-- ================= HOME TAB ================= -->
+<div class="tab-content space-y-6" id="home">
+<!-- ================= HOME HERO ================= -->
+<section class="home-hero">
+<!-- Institute Photo in Full Backdrop -->
+<div class="institute-photo-wrap">
+<img alt="Institute Campus Backdrop" class="institute-photo" src="images/institute.jpg"/>
+</div>
+<!-- Hero Content: Text on Left, Faculty Photo on Right -->
+<div class="home-hero-content">
+<div class="home-hero-grid grid grid-cols-1 md:grid-cols-[1fr_215px] gap-8 items-center">
+<!-- Faculty Details (Left) -->
+<div class="max-w-[720px] order-2 md:order-1">
+<h1 class="home-serif text-4xl sm:text-5xl font-bold text-[#2A6B4C] leading-[1.05] tracking-tight">Dr. A. Suseelatha</h1>
+<div class="w-16 h-1 bg-[#2A6B4C] mt-4 mb-5 rounded-full"></div>
+<p class="home-serif text-[17px] sm:text-[18px] leading-[1.55] text-slate-800 max-w-[580px]">
+                                I am committed to application-oriented teaching that connects mathematical concepts with engineering and real-world problems while fostering a supportive learning environment that encourages critical thinking, mathematical modelling, and problem-solving. My research interests include time-series analysis, wavelet-based methods, and machine learning.
+                            </p>
+<div class="flex flex-wrap gap-2.5 mt-6">
+<span class="px-3.5 py-1.5 rounded-full bg-[#2A6B4C]/10 text-[#2A6B4C] font-semibold text-xs border border-[#2A6B4C]/25">Time Series</span>
+<span class="px-3.5 py-1.5 rounded-full bg-[#2A6B4C]/10 text-[#2A6B4C] font-semibold text-xs border border-[#2A6B4C]/25">Forecasting Models</span>
+<span class="px-3.5 py-1.5 rounded-full bg-[#2A6B4C]/10 text-[#2A6B4C] font-semibold text-xs border border-[#2A6B4C]/25">Wavelet Transforms</span>
+<span class="px-3.5 py-1.5 rounded-full bg-[#2A6B4C]/10 text-[#2A6B4C] font-semibold text-xs border border-[#2A6B4C]/25">Cubic Equations of State</span>
+</div>
+</div>
+<!-- Faculty Photo (Right) -->
+<div class="flex justify-center md:justify-end order-1 md:order-2">
+<div class="rounded-[22px] bg-white p-2 shadow-[0_14px_35px_rgba(42,107,76,0.22)] border-2 border-[#2A6B4C]/30 relative z-10 transition-transform duration-300 hover:scale-[1.02]">
+<img alt="Dr. A. Suseelatha" class="home-profile shadow-inner rounded-[16px]" src="images/photo.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quote -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-5">
+<div class="home-quote rounded-2xl px-7 sm:px-12 py-7 sm:py-8 shadow-sm">
+<div class="flex items-start gap-5">
+<div class="text-5xl sm:text-6xl leading-none text-emerald-300 home-serif">“</div>
+<div class="flex-1">
+<p class="home-serif italic text-lg sm:text-xl leading-relaxed text-[#123568]">Mathematics is more than numbers and equations; it is a powerful tool for modelling reality, uncovering hidden patterns, and transforming real-world challenges into solvable problems.</p>
+<p class="home-serif text-right text-base sm:text-lg italic text-[#1d355b] mt-3"> </p>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- ================= TEACHING TAB ================= -->
+<div class="tab-content hidden space-y-8" id="syllabus">
+<section class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm">
+<span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full uppercase tracking-wider">Course Information</span>
+<h2 class="text-3xl font-bold text-slate-900 mt-3">Calculus and Linear Algebra</h2>
+<p class="text-slate-600 mt-2">Course syllabus organised unit-wise. Use the unit sections below to review the topics prescribed for the course.</p>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<article class="bg-white rounded-2xl p-6 border border-amber-200 shadow-sm"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit I: Sequences, Series and Mean Value Theorems</h3><p class="text-sm text-slate-600">Sequence, infinite series, tests for convergence: Comparison test, Ratio test, Root test, Rolle’s Theorem,
+Lagrange’s and Cauchy’s mean value theorems; expansions of functions: Taylor’s and Maclaurin’s series.</p></article>
+<article class="bg-white rounded-2xl p-6 border border-orange-200 shadow-sm"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit II: Partial Differentiation</h3><p class="text-sm text-slate-600">Introduction to partial derivatives, total derivatives, change of variables, Jacobians, Taylor’s theorem for
+functions of two variables, Maxima and Minima of functions of two variables, Lagrange’s method of
+undetermined multipliers.</p></article>
+<article class="bg-white rounded-2xl p-6 border border-purple-200 shadow-sm"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit III: Multiple Integrals</h3><p class="text-sm text-slate-600">Double integrals, change of order of integration, double integration in polar coordinates, areas enclosed
+by plane curves, triple integrals and change of variables.</p></article>
+<article class="bg-white rounded-2xl p-6 border border-emerald-200 shadow-sm"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit IV: Solving Systems of Linear Equations</h3><p class="text-sm text-slate-600">Rank of a matrix (by echelon form and normal form), consistency of linear system of equations,
+eigenvalues and eigenvectors of a matrix, properties of eigenvalues.</p></article>
+<article class="bg-white rounded-2xl p-6 border border-rose-200 shadow-sm md:col-span-2"><h3 class="font-bold text-lg text-slate-900 mb-2">Unit V: Cayley–Hamilton Theorem and Quadratic Forms</h3><p class="text-sm text-slate-600">Cayley-Hamilton theorem, finding the inverse and the power of a matrix by an application of the Cayley-
+Hamilton theorem, reduction to a diagonal form, reduction of a quadratic form to a canonical form, nature
+of the quadratic form.</p></article>
+</section>
+<p class="text-xs text-slate-500">Note: The unit descriptions are as per officially approved syllabus which is common for all braches.</p>
+</div>
+
+<!-- ================= LECTURE NOTES TAB ================= -->
+<div class="tab-content hidden space-y-8" id="lecturenotes">
+<div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm">
+<div class="max-w-3xl">
+<span class="text-xs font-bold text-blue-600 bg-emerald-100 px-3 py-1 rounded-full uppercase tracking-wider">Undergraduate Curriculum</span>
+<h2 class="text-3xl font-bold text-slate-900 mt-3">Lecture Notes: Calculus and Linear Algebra</h2>
+<p class="text-slate-600 mt-2 text-sm sm:text-base">Access unit-wise lecture notes, tutorials, quizzes, question banks, and assignments for the five core units.</p>
+</div>
+</div>
+<!-- 5 Units Grid with Distinct Colors & Dynamic Hover Effects -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Unit 1 (Amber Theme) -->
+<div class="bg-amber-50/60 rounded-3xl p-6 border border-amber-200/60 shadow-sm hover:bg-amber-100/80 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold bg-amber-200 text-amber-800 px-3 py-1 rounded-full">Unit 01</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-6">Sequence, Series and Mean Value Theorems</h3>
+</div>
+<div class="space-y-2 pt-4 border-t border-amber-200/60 text-sm">
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" data-resource="unit1-notes" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-500"></i> Lecture Notes</span>
+<i class="fa-solid fa-download text-xs text-slate-400"></i>
+</a>
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" data-resource="unit1-Tutorial-1" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-blue-600"></i> Tutorial-1</span>
+<i class="fa-solid fa-download text-xs text-slate-400"></i>
+</a>
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" data-resource="unit1-Tutorial-2" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-blue-600"></i> Tutorial-2</span>
+<i class="fa-solid fa-download text-xs text-slate-400"></i>
+</a>
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" data-resource="unit1-Tutorial-3" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-blue-600"></i> Tutorial-3</span>
+<i class="fa-solid fa-download text-xs text-slate-400"></i>
+</a>
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" data-resource="unit1-Tutorial-4" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-blue-600"></i> Tutorial-4</span>
+<i class="fa-solid fa-download text-xs text-slate-400"></i>
+</a>
+<a class="flex items-center justify-between text-slate-700 hover:text-amber-900 font-medium py-1.5 px-3 rounded-lg hover:bg-amber-200/50 transition" data-resource="unit1-Quiz for Practice" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-purple-600"></i>Quiz</span>
+<i class="fa-solid fa-download text-xs text-slate-400"></i>
+</a>
+</div>
+</div>
+<!-- Unit 2 (Orange Theme) -->
+<div class="bg-orange-50/60 rounded-3xl p-6 border border-orange-200/60 shadow-sm hover:bg-orange-100/80 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold bg-orange-200 text-orange-800 px-3 py-1 rounded-full">Unit 02</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-6">Partial Differentiation </h3>
+</div>
+<div class="space-y-2 pt-4 border-t border-orange-200/60 text-sm">
+<a class="flex items-center justify-between text-slate-700 hover:text-orange-900 font-medium py-1.5 px-3 rounded-lg hover:bg-orange-200/50 transition" data-resource="unit2-notes" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-500"></i> Lecture Notes</span>
+<i class="fa-solid fa-download text-xs text-slate-400"></i>
+</a>
+<a class="flex items-center justify-between text-slate-700 hover:text-orange-900 font-medium py-1.5 px-3 rounded-lg hover:bg-orange-200/50 transition" data-resource="unit2-tutorials" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-list-check text-blue-600"></i> Tutorials &amp; Question Bank</span>
+<i class="fa-solid fa-arrow-right text-xs text-slate-400"></i>
+</a>
+</div>
+</div>
+<!-- Unit 3 (Purple Theme) -->
+<div class="bg-purple-50/60 rounded-3xl p-6 border border-purple-200/60 shadow-sm hover:bg-purple-100/80 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold bg-purple-200 text-purple-800 px-3 py-1 rounded-full">Unit 03</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-6">Multiple Integrals</h3>
+</div>
+<div class="space-y-2 pt-4 border-t border-purple-200/60 text-sm">
+<a class="flex items-center justify-between text-slate-700 hover:text-purple-900 font-medium py-1.5 px-3 rounded-lg hover:bg-purple-200/50 transition" data-resource="unit3-notes" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-500"></i> Lecture Notes</span>
+<i class="fa-solid fa-download text-xs text-slate-400"></i>
+</a>
+<a class="flex items-center justify-between text-slate-700 hover:text-purple-900 font-medium py-1.5 px-3 rounded-lg hover:bg-purple-200/50 transition" data-resource="unit3-tutorials" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-list-check text-blue-600"></i> Tutorials &amp; Question Bank</span>
+<i class="fa-solid fa-arrow-right text-xs text-slate-400"></i>
+</a>
+</div>
+</div>
+<!-- Unit 4 (Emerald Theme) -->
+<div class="bg-emerald-50/60 rounded-3xl p-6 border border-emerald-200/60 shadow-sm hover:bg-emerald-100/80 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold bg-emerald-200 text-emerald-800 px-3 py-1 rounded-full">Unit 04</span>
+<span class="text-xs font-semibold text-emerald-700"></span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-6">Solving Systems of Linear Equations</h3>
+</div>
+<div class="space-y-2 pt-4 border-t border-emerald-200/60 text-sm">
+<a class="flex items-center justify-between text-slate-700 hover:text-emerald-900 font-medium py-1.5 px-3 rounded-lg hover:bg-emerald-200/50 transition" data-resource="unit4-notes" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-500"></i> Lecture Notes</span>
+<i class="fa-solid fa-download text-xs text-slate-400"></i>
+</a>
+<a class="flex items-center justify-between text-slate-700 hover:text-emerald-900 font-medium py-1.5 px-3 rounded-lg hover:bg-emerald-200/50 transition" data-resource="unit4-tutorials" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-list-check text-blue-600"></i> Tutorials &amp; Question Bank</span>
+<i class="fa-solid fa-arrow-right text-xs text-slate-400"></i>
+</a>
+</div>
+</div>
+<!-- Unit 5 (Rose Theme) -->
+<div class="bg-rose-50/60 rounded-3xl p-6 border border-rose-200/60 shadow-sm hover:bg-rose-100/80 hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col justify-between md:col-span-2 lg:col-span-1">
+<div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold bg-rose-200 text-rose-800 px-3 py-1 rounded-full">Unit 05</span>
+<span class="text-xs font-semibold text-rose-700"></span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mb-6">Cayley-Hamilton Theorem and Quadratic Forms</h3>
+</div>
+<div class="space-y-2 pt-4 border-t border-rose-200/60 text-sm">
+<a class="flex items-center justify-between text-slate-700 hover:text-rose-900 font-medium py-1.5 px-3 rounded-lg hover:bg-rose-200/50 transition" data-resource="unit5-notes" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-500"></i> Lecture Notes</span>
+<i class="fa-solid fa-download text-xs text-slate-400"></i>
+</a>
+<a class="flex items-center justify-between text-slate-700 hover:text-rose-900 font-medium py-1.5 px-3 rounded-lg hover:bg-rose-200/50 transition" data-resource="unit5-tutorials" href="#">
+<span class="flex items-center gap-2"><i class="fa-solid fa-list-check text-blue-600"></i>Tutorials &amp; Question Bank</span>
+<i class="fa-solid fa-arrow-right text-xs text-slate-400"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ================= CLASS SCHEDULE TAB ================= -->
+<div class="tab-content hidden space-y-8" id="lectureschedule">
+<section class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-calendar-days text-xl"></i>
+      </div>
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Lecture Schedule</h2>
+        <p class="text-slate-600 mt-1">Calculus and Linear Algebra · Common to all branches · Academic Year 2026–2027</p>
+        <p class="text-sm text-slate-500 mt-2">The official lecture schedule is provided as a PDF document below.</p>
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <a href="Lecture%20Schedule_CAL_LA_2026-2027.pdf" target="_blank" rel="noopener"
+         class="inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open PDF
+      </a>
+      <a href="Lecture%20Schedule_CAL_LA_2026-2027.pdf" download
+         class="inline-flex items-center justify-center gap-2 border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-4 py-2.5 rounded-xl text-sm font-semibold transition">
+        <i class="fa-solid fa-download"></i> Download Schedule
+      </a>
+    </div>
+  </div>
+  <div class="rounded-2xl border border-slate-200 overflow-hidden bg-slate-50">
+    <iframe
+      src="Lecture%20Schedule_CAL_LA_2026-2027.pdf"
+      title="Calculus and Linear Algebra Lecture Schedule 2026–2027"
+      class="w-full"
+      style="height: min(78vh, 900px); min-height: 620px;"
+      loading="lazy">
+      Your browser cannot display the PDF inline.
+      <a href="Lecture%20Schedule_CAL_LA_2026-2027.pdf">Open the lecture schedule PDF</a>.
+    </iframe>
+  </div>
+  <p class="text-xs text-slate-500 mt-3">If the document does not appear in the preview, use Open PDF or Download Schedule above.</p>
+</section>
+</div>
+
+<!-- ================= ASSIGNMENTS TAB ================= -->
+<div class="tab-content hidden space-y-8" id="assignments">
+  <section class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm">
+    <div class="flex items-center gap-4">
+      <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-file-pen text-xl"></i>
+      </div>
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Assignments</h2>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= CONTACT TAB ================= -->
+<div class="tab-content hidden space-y-8" id="contact">
+<div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-sm max-w-xl mx-auto text-center space-y-3">
+<div class="w-16 h-16 rounded-2xl bg-blue-900 text-white flex items-center justify-center font-bold text-2xl shadow-md mx-auto mb-4">
+                    ASL
+                </div>
+<h2 class="text-2xl font-bold text-slate-900">Dr. A.Suseelatha</h2>
+<a class="inline-block text-blue-600 hover:underline font-semibold text-base" href="mailto:rajeshbabu@gvpcew.ac.in">suseelatha.a@gvpcew.ac.in</a><div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left"><div class="bg-slate-50 rounded-xl p-3"><div class="text-[10px] uppercase font-bold text-slate-400">Scopus ID</div><div class="text-sm font-semibold text-slate-800">56318751000</div></div><div class="bg-slate-50 rounded-xl p-3"><div class="text-[10px] uppercase font-bold text-slate-400">Researcher ID</div><div class="text-sm font-semibold text-slate-800">O-3048-2015</div></div></div>
+</div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-white/60 backdrop-blur-md border-t border-slate-200 mt-20 py-8 text-center text-xs text-slate-500">
+<div class="max-w-7xl mx-auto px-4 flex flex-col items-center gap-4">
+<div class="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+<span class="w-9 h-9 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center">
+<i class="fa-solid fa-eye"></i>
+</span>
+<div class="text-left">
+<span class="block text-[10px] uppercase tracking-wider font-bold text-slate-400">Visitors</span>
+<div class="counterapi font-bold text-slate-800 text-sm" key="faculty-portal-visits" label="visits" style="min-height:20px"></div>
+</div>
+</div>
+<p>© 2026 Dr. A.Suseelatha. All Rights Reserved. Built for Calculus and Linear Algebra.</p>
+</div>
+</footer>
+</div>
+
+<!-- Visitor counter -->
+<script async="" src="https://counterapi.com/c.js"></script>
+
+<!-- ================= GOOGLE DRIVE RESOURCE LINKS ================= -->
+<script>
+        const DRIVE_LINKS = {
+            "assignments-folder": "https://drive.google.com/drive/folders/1PZg8NtutHK8r11T0QelbWL1LNfurxkWZ?usp=sharing",
+            "unit1-notes": "https://drive.google.com/file/d/1M0Y0Ds4TbVxylzjAKN0QFDwqMkTvEOqA/view?usp=sharing",
+            "unit1-Tutorial-1": "https://drive.google.com/file/d/1ankUX1MS9yjPreJs9VSW6wQWn_5jTkF7/view?usp=sharing",
+            "unit1-Tutorial-2": "https://drive.google.com/file/d/1791yXhfGEgLDgzPCALguLupsY8iIRkbV/view?usp=sharing",
+            "unit1-Tutorial-3": "https://drive.google.com/file/d/1coNqpLf6LRLmmtyIJlldfRcVCNzapfyy/view?usp=sharing",
+            "unit1-Tutorial-4": "https://drive.google.com/file/d/1_v3gZDVg1a4kcd_20-qaxmkcQovMicr_/view?usp=sharing",
+            "unit1-Quiz for Practice": "https://drive.google.com/file/d/1UYlszjOAOCCbqnXSDtNunNJhoUpyiVeH/view?usp=sharing",
+           };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[data-resource]').forEach(link => {
+                const key = link.dataset.resource;
+                const url = DRIVE_LINKS[key];
+                if (url) {
+                    link.href = url;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                } else {
+                    link.href = 'javascript:void(0)';
+                    link.addEventListener('click', () => {
+                        alert('This resource will be available soon. Please check back after the Google Drive link is added.');
+                    });
+                    link.classList.add('opacity-70');
+                }
+            });
+        });
+    </script>
+<!-- Interactive Scripts -->
+<script>
+        function switchTab(tabId) {
+            // Hide all tab panels
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            
+            // Reset all sidebar oval buttons
+            document.querySelectorAll('.nav-btn').forEach(el => {
+                el.classList.remove(
+                    'bg-gradient-to-r', 'from-emerald-500', 'to-teal-600', 'bg-emerald-500',
+                    'text-white', 'font-bold', 'shadow-md', 'border', 'border-emerald-200/40'
+                );
+                el.classList.add('text-white/85', 'hover:bg-white/10', 'font-medium');
+            });
+            
+            // Show chosen tab
+            const target = document.getElementById(tabId);
+            if(target) {
+                target.classList.remove('hidden');
+            }
+            
+            // Highlight active sidebar button (emerald-teal gradient oval pill)
+            const activeBtn = document.getElementById('nav-' + tabId);
+            if(activeBtn) {
+                activeBtn.classList.remove('text-white/85', 'hover:bg-white/10', 'font-medium');
+                activeBtn.classList.add(
+                    'bg-gradient-to-r', 'from-emerald-500', 'to-teal-600',
+                    'text-white', 'font-bold', 'shadow-md', 'border', 'border-emerald-200/40'
+                );
+            }
+
+            // Close mobile sidebar if open
+            if (window.innerWidth < 768) {
+                const sidebar = document.getElementById('sidebar-nav');
+                const overlay = document.getElementById('sidebar-overlay');
+                if (sidebar && !sidebar.classList.contains('-translate-x-full')) {
+                    sidebar.classList.add('-translate-x-full');
+                }
+                if (overlay && !overlay.classList.contains('hidden')) {
+                    overlay.classList.add('hidden');
+                }
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const sidebar = document.getElementById('sidebar-nav');
+            const overlay = document.getElementById('sidebar-overlay');
+            if (sidebar) {
+                sidebar.classList.toggle('-translate-x-full');
+            }
+            if (overlay) {
+                overlay.classList.toggle('hidden');
+            }
+        }
+
+    </script>
+</body>
+</html>
