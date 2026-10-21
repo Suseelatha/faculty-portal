@@ -393,10 +393,10 @@
         </div>
         <div>
           <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Unit-wise Self-Assessment Quizzes</h2>
-          <p class="text-slate-600 text-sm mt-1">Practice questions compiled directly from PDF question sets in your repository.</p>
+          <p class="text-slate-600 text-sm mt-1">Dynamic questions fetched automatically from <code>questions.json</code>.</p>
         </div>
       </div>
-      <button onclick="shuffleActiveQuiz()" class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm">
+      <button onclick="loadDynamicQuiz()" class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm">
         <i class="fa-solid fa-shuffle"></i> Reshuffle Questions
       </button>
     </div>
@@ -415,206 +415,22 @@
   <!-- Container for Quiz Panels -->
   <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm max-w-4xl mx-auto">
     
-    <!-- UNIT I: SEQUENCES QUIZ -->
-    <div id="quiz-seq" class="quiz-panel space-y-6">
-      <div class="flex items-center justify-between border-b pb-3">
-        <h3 class="text-xl font-bold text-slate-900">Unit I: Sequences Practice Quiz (5 Questions)</h3>
-        <a href="Unit-I/sequence-quiz.pdf" target="_blank" rel="noopener" class="text-xs text-emerald-700 font-semibold hover:underline flex items-center gap-1">
-          <i class="fa-solid fa-file-pdf"></i> View Source PDF
-        </a>
+    <div class="flex items-center justify-between border-b pb-3 mb-6">
+      <h3 id="quizTitle" class="text-xl font-bold text-slate-900">Unit Quiz</h3>
+      <a id="quizPdfLink" href="#" target="_blank" rel="noopener" class="text-xs text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+        <i class="fa-solid fa-file-pdf"></i> View Source PDF
+      </a>
+    </div>
+
+    <form id="dynamicQuizForm" class="space-y-5">
+      <div id="dynamicQuestionsContainer" class="space-y-5">
+        <!-- Dynamic JSON Questions populate here -->
       </div>
-      <form id="form-seq" class="space-y-5">
-        <div class="questions-container space-y-5">
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">Determine the behavior and limit of a_n = n / (n+1) as n → ∞:</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq1" value="A"> (A) Convergent with limit = 1</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq1" value="B"> (B) Convergent with limit = 0</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq1" value="C"> (C) Divergent (approaches +∞)</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq1" value="D"> (D) Oscillatory</label>
-            </div>
-          </div>
 
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">Evaluate the long-term behavior of the sequence a_n = (2^n - 1) / 2^n:</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq2" value="A"> (A) Convergent with limit = 0</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq2" value="B"> (B) Convergent with limit = 1</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq2" value="C"> (C) Divergent to +∞</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq2" value="D"> (D) Oscillatory between 0 and 1</label>
-            </div>
-          </div>
-
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">What is the limit of a_n = (2^n - 1) / 3^n as n → ∞?</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq3" value="A"> (A) Convergent with limit = 0</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq3" value="B"> (B) Convergent with limit = 2/3</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq3" value="C"> (C) Convergent with limit = 1</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq3" value="D"> (D) Divergent to +∞</label>
-            </div>
-          </div>
-
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">Find the limit of the trigonometric sequence a_n = n * sin(1/n) as n → ∞:</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq4" value="A"> (A) Convergent with limit = 0</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq4" value="B"> (B) Convergent with limit = 1</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq4" value="C"> (C) Convergent with limit = π</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq4" value="D"> (D) Divergent / Undefined</label>
-            </div>
-          </div>
-
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">Determine the convergence or divergence of rational sequence a_n = (n+3) / (n^2 + 5n + 6):</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq5" value="A"> (A) Convergent with limit = 0</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq5" value="B"> (B) Convergent with limit = 1</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq5" value="C"> (C) Convergent with limit = 1/2</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sq5" value="D"> (D) Divergent to +∞</label>
-            </div>
-          </div>
-        </div>
-
-        <button type="button" onclick="gradeUnitQuiz('seq', {sq1:'A', sq2:'B', sq3:'A', sq4:'B', sq5:'A'})" class="w-full bg-[#2A6B4C] hover:bg-[#22573e] text-white font-bold py-3 rounded-xl transition shadow-md">Submit Sequences Quiz</button>
-      </form>
-    </div>
-
-    <!-- UNIT I: SERIES QUIZ -->
-    <div id="quiz-series" class="quiz-panel hidden space-y-6">
-      <div class="flex items-center justify-between border-b pb-3">
-        <h3 class="text-xl font-bold text-slate-900">Unit I: Infinite Series Convergence Quiz (10 Questions)</h3>
-        <a href="Unit-I/series-quiz.pdf" target="_blank" rel="noopener" class="text-xs text-emerald-700 font-semibold hover:underline flex items-center gap-1">
-          <i class="fa-solid fa-file-pdf"></i> View Source PDF
-        </a>
-      </div>
-      <form id="form-series" class="space-y-5">
-        <div class="questions-container space-y-5">
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">Test the convergence of the infinite series ∑ [n / (n^3 + 4)]:</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr1" value="A"> (A) Convergent (by Comparison Test with 1/n^2)</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr1" value="B"> (B) Divergent (by p-series test)</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr1" value="C"> (C) Oscillatory</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr1" value="D"> (D) Absolutely Divergent</label>
-            </div>
-          </div>
-
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">Determine the behavior of the geometric series ∑ (1/3)^n from n=1 to ∞:</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr2" value="A"> (A) Divergent</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr2" value="B"> (B) Convergent with sum = 1/2</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr2" value="C"> (C) Convergent with sum = 1/3</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr2" value="D"> (D) Oscillatory</label>
-            </div>
-          </div>
-
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">Apply D'Alembert's Ratio Test to the series ∑ (n! / 2^n):</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr3" value="A"> (A) Limit L = 0 (Convergent)</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr3" value="B"> (B) Limit L = 1/2 (Convergent)</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr3" value="C"> (C) Limit L = ∞ (Divergent)</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr3" value="D"> (D) Test Inconclusive</label>
-            </div>
-          </div>
-
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">Using Cauchy's Root Test, test the series ∑ [(n+1)/(2n+1)]^n:</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr4" value="A"> (A) L = 1/2 &lt; 1 (Convergent)</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr4" value="B"> (B) L = 2 &gt; 1 (Divergent)</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr4" value="C"> (C) L = 1 (Inconclusive)</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr4" value="D"> (D) L = 0 (Divergent)</label>
-            </div>
-          </div>
-
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">For what values of p is the p-series ∑ (1 / n^p) convergent?</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr5" value="A"> (A) p &gt; 1</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr5" value="B"> (B) p ≤ 1</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr5" value="C"> (C) p &lt; 0</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr5" value="D"> (D) All real numbers</label>
-            </div>
-          </div>
-
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">Test the convergence of the alternating series ∑ [(-1)^(n-1) / n] using Leibniz Test:</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr6" value="A"> (A) Conditionally Convergent</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr6" value="B"> (B) Absolutely Convergent</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr6" value="C"> (C) Divergent</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr6" value="D"> (D) Oscillatory Infinite</label>
-            </div>
-          </div>
-
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">The harmonic series ∑ (1 / n) is:</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr7" value="A"> (A) Divergent</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr7" value="B"> (B) Convergent to 1</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr7" value="C"> (C) Convergent to e</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr7" value="D"> (D) Absolutely Convergent</label>
-            </div>
-          </div>
-
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">Determine the radius of convergence R for power series ∑ (x^n / n!):</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr8" value="A"> (A) R = ∞</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr8" value="B"> (B) R = 1</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr8" value="C"> (C) R = 0</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr8" value="D"> (D) R = 2</label>
-            </div>
-          </div>
-
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">Test the series ∑ 1 / (n^2 + 1) using Raabe's or Comparison Test:</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr9" value="A"> (A) Convergent</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr9" value="B"> (B) Divergent</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr9" value="C"> (C) Oscillatory</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr9" value="D"> (D) Inconclusive</label>
-            </div>
-          </div>
-
-          <div class="quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3">
-            <p class="question-text font-semibold text-slate-800 text-sm">If lim (n → ∞) a_n ≠ 0, then the infinite series ∑ a_n is:</p>
-            <div class="options-container space-y-2">
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr10" value="A"> (A) Definitely Divergent (by Test for Divergence)</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr10" value="B"> (B) Convergent</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr10" value="C"> (C) Absolutely Convergent</label>
-              <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm"><input type="radio" name="sr10" value="D"> (D) Conditionally Convergent</label>
-            </div>
-          </div>
-        </div>
-
-        <button type="button" onclick="gradeUnitQuiz('series', {sr1:'A', sr2:'B', sr3:'C', sr4:'A', sr5:'A', sr6:'A', sr7:'A', sr8:'A', sr9:'A', sr10:'A'})" class="w-full bg-[#2A6B4C] hover:bg-[#22573e] text-white font-bold py-3 rounded-xl transition shadow-md">Submit Series Quiz</button>
-      </form>
-    </div>
-
-    <!-- OTHER UNITS -->
-    <div id="quiz-u2" class="quiz-panel hidden space-y-6">
-      <h3 class="text-xl font-bold text-slate-900 border-b pb-3">Unit II: Partial Differentiation Quiz</h3>
-      <p class="text-sm text-slate-600">Review Taylor's Theorem and Jacobians before attempting.</p>
-    </div>
-
-    <div id="quiz-u3" class="quiz-panel hidden space-y-6">
-      <h3 class="text-xl font-bold text-slate-900 border-b pb-3">Unit III: Multiple Integrals Quiz</h3>
-      <p class="text-sm text-slate-600">Covers Double and Triple Integrals.</p>
-    </div>
-
-    <div id="quiz-u4" class="quiz-panel hidden space-y-6">
-      <h3 class="text-xl font-bold text-slate-900 border-b pb-3">Unit IV: Systems of Linear Equations Quiz</h3>
-      <p class="text-sm text-slate-600">Covers Rank, Eigenvalues, and Matrix Consistency.</p>
-    </div>
-
-    <div id="quiz-u5" class="quiz-panel hidden space-y-6">
-      <h3 class="text-xl font-bold text-slate-900 border-b pb-3">Unit V: Cayley-Hamilton Theorem Quiz</h3>
-      <p class="text-sm text-slate-600">Covers Quadratic Forms and Matrix Diagonalization.</p>
-    </div>
+      <button type="button" onclick="submitDynamicQuiz()" class="w-full bg-[#2A6B4C] hover:bg-[#22573e] text-white font-bold py-3 rounded-xl transition shadow-md mt-6">
+        Submit Quiz
+      </button>
+    </form>
 
     <!-- Score Feedback Banner -->
     <div id="quizScoreBox" class="hidden mt-6 p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
@@ -644,9 +460,11 @@
 </footer>
 </div>
 
-<!-- ================= TAB NAVIGATION, QUIZ & VISITOR COUNTER SCRIPT ================= -->
+<!-- ================= TAB NAVIGATION, DYNAMIC JSON QUIZ & VISITOR COUNTER SCRIPT ================= -->
 <script>
         let currentActiveUnit = 'seq';
+        let currentQuestionsData = [];
+        let masterQuestionsBank = null;
 
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
@@ -666,7 +484,7 @@
             }
 
             if (tabId === 'quizzes') {
-                shuffleActiveQuiz();
+                loadDynamicQuiz();
             }
 
             if (window.innerWidth < 768) {
@@ -685,83 +503,106 @@
             if (overlay) overlay.classList.toggle('hidden');
         }
 
+        function shuffleArray(arr) {
+            const array = [...arr];
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
         function switchQuizUnit(unitId) {
             currentActiveUnit = unitId;
-            document.querySelectorAll('.quiz-panel').forEach(panel => panel.classList.add('hidden'));
             document.querySelectorAll('.unit-quiz-btn').forEach(btn => {
                 btn.className = "unit-quiz-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
             });
-
-            const panel = document.getElementById('quiz-' + unitId);
-            if(panel) panel.classList.remove('hidden');
 
             const activeBtn = document.getElementById('btn-' + unitId);
             if(activeBtn) {
                 activeBtn.className = "unit-quiz-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#2A6B4C] text-white shadow-sm transition";
             }
-            
+
+            loadDynamicQuiz();
+        }
+
+        async function loadDynamicQuiz() {
             const scoreBox = document.getElementById('quizScoreBox');
             if(scoreBox) scoreBox.classList.add('hidden');
 
-            shuffleQuizContainer('quiz-' + unitId);
-        }
+            const container = document.getElementById('dynamicQuestionsContainer');
+            container.innerHTML = '<div class="p-6 text-center text-slate-500 font-medium">Loading question bank...</div>';
 
-        function shuffleArray(arr) {
-            for (let i = arr.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [arr[i], arr[j]] = [arr[j], arr[i]];
+            try {
+                if (!masterQuestionsBank) {
+                    const response = await fetch('questions.json');
+                    if (!response.ok) throw new Error('Failed to load questions.json');
+                    masterQuestionsBank = await response.json();
+                }
+
+                const unitData = masterQuestionsBank[currentActiveUnit];
+                if (!unitData || !unitData.questions || unitData.questions.length === 0) {
+                    container.innerHTML = '<div class="p-6 text-center text-slate-500 font-medium">Questions for this unit are coming soon!</div>';
+                    document.getElementById('quizTitle').innerText = 'Unit Quiz';
+                    document.getElementById('quizPdfLink').style.display = 'none';
+                    return;
+                }
+
+                document.getElementById('quizTitle').innerText = unitData.title || 'Unit Self-Assessment Quiz';
+                const pdfLink = document.getElementById('quizPdfLink');
+                if (unitData.pdf_link) {
+                    pdfLink.href = unitData.pdf_link;
+                    pdfLink.style.display = 'flex';
+                } else {
+                    pdfLink.style.display = 'none';
+                }
+
+                // Sample up to 5 randomized questions
+                const sampleSize = Math.min(5, unitData.questions.length);
+                currentQuestionsData = shuffleArray(unitData.questions).slice(0, sampleSize);
+
+                container.innerHTML = '';
+                currentQuestionsData.forEach((item, qIdx) => {
+                    const shuffledOptions = shuffleArray(item.options);
+                    const qDiv = document.createElement('div');
+                    qDiv.className = 'quiz-question-item p-4 rounded-2xl bg-amber-50/50 border border-amber-200/60 space-y-3';
+                    
+                    qDiv.innerHTML = `
+                        <p class="question-text font-semibold text-slate-800 text-sm">Q${qIdx + 1}. ${item.q}</p>
+                        <div class="options-container space-y-2">
+                            ${shuffledOptions.map(opt => `
+                                <label class="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-slate-200 cursor-pointer text-sm hover:bg-slate-50 transition">
+                                    <input type="radio" name="q_${qIdx}" value="${opt.replace(/"/g, '&quot;')}">
+                                    <span>${opt}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                    `;
+                    container.appendChild(qDiv);
+                });
+
+            } catch (err) {
+                container.innerHTML = `
+                    <div class="p-6 text-center text-rose-700 bg-rose-50 border border-rose-200 rounded-2xl text-sm">
+                        <i class="fa-solid fa-triangle-exclamation text-lg mb-1 block"></i>
+                        Could not fetch quiz bank. Ensure <code>questions.json</code> is saved in the same directory.
+                    </div>
+                `;
             }
-            return arr;
         }
 
-        function shuffleQuizContainer(panelId) {
-            const panel = document.getElementById(panelId);
-            if (!panel) return;
+        function submitDynamicQuiz() {
+            if (!currentQuestionsData || currentQuestionsData.length === 0) return;
 
-            const container = panel.querySelector('.questions-container');
-            if (!container) return;
-
-            const questionItems = Array.from(container.querySelectorAll('.quiz-question-item'));
-            if (questionItems.length === 0) return;
-
-            // Shuffle question order
-            shuffleArray(questionItems);
-
-            questionItems.forEach((item, index) => {
-                // Update question numbering smoothly
-                const questionText = item.querySelector('.question-text');
-                if (questionText) {
-                    const rawText = questionText.innerText.replace(/^Q\d+\.\s*/, '');
-                    questionText.innerText = `Q${index + 1}. ${rawText}`;
-                }
-
-                // Shuffle options inside question
-                const optionsContainer = item.querySelector('.options-container');
-                if (optionsContainer) {
-                    const labels = Array.from(optionsContainer.querySelectorAll('label'));
-                    shuffleArray(labels);
-                    labels.forEach(label => optionsContainer.appendChild(label));
-                }
-
-                container.appendChild(item);
-            });
-        }
-
-        function shuffleActiveQuiz() {
-            shuffleQuizContainer('quiz-' + currentActiveUnit);
-        }
-
-        function gradeUnitQuiz(unitId, keyAnswers) {
-            const form = document.getElementById('form-' + unitId);
             let score = 0;
-            let total = Object.keys(keyAnswers).length;
+            const total = currentQuestionsData.length;
 
-            for (let key in keyAnswers) {
-                const selected = form.elements[key] ? form.elements[key].value : null;
-                if (selected === keyAnswers[key]) {
+            currentQuestionsData.forEach((item, qIdx) => {
+                const selected = document.querySelector(`input[name="q_${qIdx}"]:checked`);
+                if (selected && selected.value === item.answer) {
                     score++;
                 }
-            }
+            });
 
             const box = document.getElementById('quizScoreBox');
             const scoreText = document.getElementById('quizScoreResult');
@@ -771,7 +612,7 @@
             scoreText.innerText = `Score: ${score} / ${total}`;
             noteText.innerText = (score === total) 
                 ? "Outstanding! You scored 100% on this quiz." 
-                : "Good attempt! Review the step-by-step solutions to practice.";
+                : "Good attempt! Re-shuffle to try another randomized question set.";
             box.scrollIntoView({ behavior: 'smooth' });
         }
 
@@ -787,9 +628,6 @@
             
             localStorage.setItem('site_visitor_count', count);
             document.getElementById('visitor-count').innerText = count;
-
-            // Initial shuffle on DOM ready
-            shuffleActiveQuiz();
         });
 </script>
 </body>
