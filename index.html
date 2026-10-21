@@ -716,13 +716,23 @@
 
         // Live Visitor Counter Fetch
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://countapi.mileshilliard.com/api/v1/hit/dr-suseelatha-portal-visits')
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById('visitor-count').innerText = data.value;
+    fetch('https://api.counterapi.dev/v2/dr-suseelatha-portal/visits/up')
+        .then(res => {
+            if (!res.ok) throw new Error('Network response was not ok');
+            return res.json();
+        })
+        .then(resData => {
+            // CounterAPI v2 returns { data: { count: 123 } } or { count: 123 }
+            const totalVisits = resData?.data?.count ?? resData?.count ?? resData?.value;
+            
+            if (totalVisits !== undefined && totalVisits !== null) {
+                document.getElementById('visitor-count').innerText = totalVisits;
+            } else {
+                document.getElementById('visitor-count').innerText = '1+';
+            }
         })
         .catch(() => {
-            document.getElementById('visitor-count').innerText = '—';
+            document.getElementById('visitor-count').innerText = '1+';
         });
 });
 </script>
