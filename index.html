@@ -716,10 +716,10 @@
 
         // Live Visitor Counter Fetch
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://counterapi.dev/v1/dr-suseelatha-portal/visits/up')
+    fetch('https://countapi.mileshilliard.com/api/v1/hit/dr-suseelatha-portal-visits')
         .then(res => res.json())
         .then(data => {
-            document.getElementById('visitor-count').innerText = data.count;
+            document.getElementById('visitor-count').innerText = data.value;
         })
         .catch(() => {
             document.getElementById('visitor-count').innerText = '—';
