@@ -397,7 +397,7 @@
         </div>
         <div>
           <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Unit-wise Self-Assessment Quizzes</h2>
-          <p class="text-slate-600 text-sm mt-1">Dynamic questions fetched automatically from <code>questions.json</code>.</p>
+          <p class="text-slate-600 text-sm mt-1">Dynamic questions fetched automatically from quiz banks.</p>
         </div>
       </div>
       <button onclick="loadDynamicQuiz()" class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm">
@@ -409,6 +409,7 @@
     <div class="flex flex-wrap gap-2 mt-6 pt-6 border-t border-slate-100">
       <button onclick="switchQuizUnit('seq')" id="btn-seq" class="unit-quiz-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#2A6B4C] text-white shadow-sm transition">Unit I: Sequences Quiz</button>
       <button onclick="switchQuizUnit('series')" id="btn-series" class="unit-quiz-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Unit I: Series Quiz</button>
+      <button onclick="switchQuizUnit('mvt')" id="btn-mvt" class="unit-quiz-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Unit I: Mean Value Theorems Quiz</button>
       <button onclick="switchQuizUnit('u2')" id="btn-u2" class="unit-quiz-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Unit II</button>
       <button onclick="switchQuizUnit('u3')" id="btn-u3" class="unit-quiz-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Unit III</button>
       <button onclick="switchQuizUnit('u4')" id="btn-u4" class="unit-quiz-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Unit IV</button>
@@ -469,6 +470,7 @@
         let currentActiveUnit = 'seq';
         let currentQuestionsData = [];
         let masterQuestionsBank = null;
+        let masterQuestionsBank1 = null;
 
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
@@ -538,13 +540,24 @@
             container.innerHTML = '<div class="p-6 text-center text-slate-500 font-medium">Loading question bank...</div>';
 
             try {
-                if (!masterQuestionsBank) {
-                    const response = await fetch('questions.json');
-                    if (!response.ok) throw new Error('Failed to load questions.json');
-                    masterQuestionsBank = await response.json();
+                let unitData = null;
+
+                if (currentActiveUnit === 'mvt') {
+                    if (!masterQuestionsBank1) {
+                        const response = await fetch('questions1.json');
+                        if (!response.ok) throw new Error('Failed to load questions1.json');
+                        masterQuestionsBank1 = await response.json();
+                    }
+                    unitData = masterQuestionsBank1['mvt'];
+                } else {
+                    if (!masterQuestionsBank) {
+                        const response = await fetch('questions.json');
+                        if (!response.ok) throw new Error('Failed to load questions.json');
+                        masterQuestionsBank = await response.json();
+                    }
+                    unitData = masterQuestionsBank[currentActiveUnit];
                 }
 
-                const unitData = masterQuestionsBank[currentActiveUnit];
                 if (!unitData || !unitData.questions || unitData.questions.length === 0) {
                     container.innerHTML = '<div class="p-6 text-center text-slate-500 font-medium">Questions for this unit are coming soon!</div>';
                     document.getElementById('quizTitle').innerText = 'Unit Quiz';
@@ -589,7 +602,7 @@
                 container.innerHTML = `
                     <div class="p-6 text-center text-rose-700 bg-rose-50 border border-rose-200 rounded-2xl text-sm">
                         <i class="fa-solid fa-triangle-exclamation text-lg mb-1 block"></i>
-                        Could not fetch quiz bank. Ensure <code>questions.json</code> is saved in the same directory.
+                        Could not fetch quiz bank. Ensure <code>questions.json</code> and <code>questions1.json</code> are saved in the same directory.
                     </div>
                 `;
             }
