@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Dr. A. Suseelatha | Faculty Portal</title>
+
 <!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -29,15 +30,27 @@
             }
         }
     </script>
+
 <!-- FontAwesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 
-<!-- KaTeX Math Renderer for LaTeX Equations -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+<!-- MathJax Configuration and Library for Rendering LaTeX Math Equations -->
+<script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <style>
         .tab-content { animation: fadeIn .35s ease-out; }
@@ -538,21 +551,6 @@
             loadDynamicQuiz();
         }
 
-        // Helper function to render TeX/LaTeX math expressions cleanly
-        function renderMathInContainer(element) {
-            if (window.renderMathInElement) {
-                window.renderMathInElement(element, {
-                    delimiters: [
-                        {left: '$$', right: '$$', display: true},
-                        {left: '$', right: '$', display: false},
-                        {left: '\\(', right: '\\)', display: false},
-                        {left: '\\[', right: '\\]', display: true}
-                    ],
-                    throwOnError: false
-                });
-            }
-        }
-
         async function loadDynamicQuiz() {
             const scoreBox = document.getElementById('quizScoreBox');
             if(scoreBox) scoreBox.classList.add('hidden');
@@ -619,8 +617,10 @@
                     container.appendChild(qDiv);
                 });
 
-                // Render all LaTeX Math formulas inside questions
-                renderMathInContainer(container);
+                // Trigger MathJax rendering on dynamically loaded elements
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([container]);
+                }
 
             } catch (err) {
                 container.innerHTML = `
@@ -661,7 +661,6 @@
         document.addEventListener('DOMContentLoaded', async () => {
             const countElem = document.getElementById('visitor-count');
             try {
-                // Fetch and increment global counter via CounterAPI
                 const res = await fetch('https://api.counterapi.dev/v1/suseelatha_portal/visitors/up');
                 if (res.ok) {
                     const data = await res.json();
@@ -672,7 +671,6 @@
                 }
                 throw new Error('Counter API unreachable');
             } catch (err) {
-                // Fallback to local count if offline
                 let localCount = localStorage.getItem('site_visitor_count') || '120';
                 localCount = parseInt(localCount, 10) + 1;
                 localStorage.setItem('site_visitor_count', localCount);
