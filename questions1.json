@@ -1,0 +1,358 @@
+{
+  "mvt": {
+    "title": "Unit I: Quiz on Mean Value Theorems",
+    "pdf_link": "Unit-I/Mean_Value_Theorems_Practice_Problems.pdf",
+    "questions": [
+      {
+        "q": "The value of c for which Rolle's theorem holds for f(x) = sin(x) / e^x in [0, \u03c0] is:",
+        "options": [
+          "3\u03c0/4",
+          "\u03c0/4",
+          "\u03c0/2",
+          "\u03c0/3"
+        ],
+        "answer": "\u03c0/4"
+      },
+      {
+        "q": "The value of c for which Rolle's theorem holds for f(x) = (x + 2)^3 (x - 3)^4 in [-2, 3] is:",
+        "options": [
+          "0",
+          "1/7",
+          "-1/7",
+          "1"
+        ],
+        "answer": "1/7"
+      },
+      {
+        "q": "For which function is Rolle's theorem applicable?",
+        "options": [
+          "f(x) = tan x in [0, \u03c0]",
+          "f(x) = 1/x^2 in [-1, 1]",
+          "f(x) = x^3 in [-1, 3]",
+          "f(x) = x^2 in [-1, 1]"
+        ],
+        "answer": "f(x) = x^2 in [-1, 1]"
+      },
+      {
+        "q": "For which function is Rolle's theorem NOT applicable?",
+        "options": [
+          "f(x) = x^2 - |x| in [-1, 1]",
+          "f(x) = \u221a(4 - x^2) in [-2, 2]",
+          "f(x) = x^2 - 5x + 7 in [2, 3]",
+          "f(x) = sin x in [0, 2\u03c0]"
+        ],
+        "answer": "f(x) = x^2 - |x| in [-1, 1]"
+      },
+      {
+        "q": "The value of c for which Rolle's theorem holds for f(x) = log[(x^2 + 6)/(5x)] in [2, 3] is:",
+        "options": [
+          "\u221a5",
+          "\u221a6",
+          "\u221a3",
+          "\u221a8"
+        ],
+        "answer": "\u221a6"
+      },
+      {
+        "q": "The value of c for which Rolle's theorem holds for f(x) = x^3 (1 - x)^2 in [0, 1] is:",
+        "options": [
+          "2/5",
+          "3/5",
+          "4/5",
+          "1"
+        ],
+        "answer": "3/5"
+      },
+      {
+        "q": "The value of c for which Rolle's theorem holds for f(x) = x^3 - 4x in [-2, 2] is:",
+        "options": [
+          "\u00b11",
+          "\u00b12/\u221a3",
+          "\u00b12/3",
+          "0"
+        ],
+        "answer": "\u00b12/\u221a3"
+      },
+      {
+        "q": "The value of c for which Rolle's theorem holds for f(x) = x^3 - 3x^2 - x + 3 in [1, 3] is:",
+        "options": [
+          "1 + \u221a7/3",
+          "1 + 2/\u221a3",
+          "1 - 2/\u221a3",
+          "2"
+        ],
+        "answer": "1 + 2/\u221a3"
+      },
+      {
+        "q": "The value of c for which Rolle's theorem holds for f(x) = x^3 - 12x in [0, 2\u221a3] is:",
+        "options": [
+          "1",
+          "\u221a3",
+          "2",
+          "2/\u221a3"
+        ],
+        "answer": "2"
+      },
+      {
+        "q": "If 2a + 3b + 6c = 0, then the equation ax^2 + bx + c = 0 has a root lying between:",
+        "options": [
+          "0 and 3",
+          "0 and 1",
+          "0 and 2",
+          "1 and 2"
+        ],
+        "answer": "0 and 1"
+      },
+      {
+        "q": "If 4a + 2b + c = 0, then the equation 3ax^2 + 2bx + c = 0 has at least one real root lying between:",
+        "options": [
+          "0 and 1",
+          "1 and 2",
+          "0 and 2",
+          "1 and 3"
+        ],
+        "answer": "0 and 2"
+      },
+      {
+        "q": "If f: [0, 1] \u2192 [0, 1] is a continuous function, then:",
+        "options": [
+          "f(x) = x for at least one x \u2208 [0, 1]",
+          "f(x) is differentiable in (0, 1)",
+          "f(x) + x = 0 for at least one x \u2208 [0, 1]",
+          "None"
+        ],
+        "answer": "f(x) = x for at least one x \u2208 [0, 1]"
+      },
+      {
+        "q": "The value of c for which Lagrange's theorem holds for f(x) = log_e(x) in [1, e] is:",
+        "options": [
+          "e + 1",
+          "e - 1",
+          "1 - e",
+          "e + 1/2"
+        ],
+        "answer": "e - 1"
+      },
+      {
+        "q": "Lagrange's theorem is NOT applicable to f(x) = x^(1/3) in [-1, 1] because:",
+        "options": [
+          "f is not continuous in [-1, 1]",
+          "f(-1) does not exist",
+          "f is not derivable at x = 0",
+          "f is not derivable at x = 1"
+        ],
+        "answer": "f is not derivable at x = 0"
+      },
+      {
+        "q": "Rolle's theorem is NOT applicable to f(x) = |x cos x| in [0, 3\u03c0/2] since:",
+        "options": [
+          "f is not continuous in [0, 3\u03c0/2]",
+          "f is not derivable at \u03c0",
+          "f is not derivable at \u03c0/2",
+          "f(0) \u2260 f(3\u03c0/2)"
+        ],
+        "answer": "f is not derivable at \u03c0/2"
+      },
+      {
+        "q": "Rolle's theorem is NOT applicable to f(x) = 1/x^2 in [-1, 1] since:",
+        "options": [
+          "f is not continuous in [-1, 1]",
+          "f is not derivable at 1",
+          "f(-1) \u2260 f(1)",
+          "f is not left continuous at 1"
+        ],
+        "answer": "f is not continuous in [-1, 1]"
+      },
+      {
+        "q": "The value of c for which Lagrange's theorem holds for f(x) = 5x^2 + 7x + 6 in [3, 4] is:",
+        "options": [
+          "3.2",
+          "3.5",
+          "3.8",
+          "3.6"
+        ],
+        "answer": "3.5"
+      },
+      {
+        "q": "If f(x) is differentiable finitely in [-1, 2] where f(-1) = 3, f(2) = 6, then which equation has a solution in (-1, 2)?",
+        "options": [
+          "f'(x) = 0",
+          "f'(x) = 1",
+          "f'(x) = 2",
+          "f'(x) - 1 = 0"
+        ],
+        "answer": "f'(x) = 1"
+      },
+      {
+        "q": "The value of c for which Lagrange's theorem is applicable to f(x) = cos x in [0, \u03c0/2] is:",
+        "options": [
+          "sin^-1(\u03c0/2)",
+          "sin^-1(1/\u03c0)",
+          "sin^-1(2/\u03c0)",
+          "None"
+        ],
+        "answer": "sin^-1(2/\u03c0)"
+      },
+      {
+        "q": "If f'(x) > 0 and g'(x) < 0 for all x \u2208 \u211d, then:",
+        "options": [
+          "f{g(x + 1)} < f{g(x)}",
+          "f{g(x + 1)} > f{g(x)}",
+          "f{g(x)} > f{g(x - 1)}",
+          "None"
+        ],
+        "answer": "f{g(x + 1)} < f{g(x)}"
+      },
+      {
+        "q": "The Lagrange's mean value theorem is NOT applicable to f(x) = x sin(1/x) for x \u2260 0, f(0) = 0 in [-1, 1] since:",
+        "options": [
+          "f is not continuous in [-1, 1]",
+          "f is not derivable at 1/2",
+          "f is not derivable at 0",
+          "None"
+        ],
+        "answer": "f is not derivable at 0"
+      },
+      {
+        "q": "If f(x) = x^2 then the value of \u03b8 \u2208 (0, 1) such that Lagrange's theorem is satisfied in [a, a + h] is:",
+        "options": [
+          "1/3",
+          "1/4",
+          "1/2",
+          "None"
+        ],
+        "answer": "1/2"
+      },
+      {
+        "q": "If a < 0, the function f(x) = e^(ax) + e^(-ax) is a monotonically decreasing function for values of x given by:",
+        "options": [
+          "x > 0",
+          "x < 0",
+          "x > 1",
+          "x < 1"
+        ],
+        "answer": "x < 0"
+      },
+      {
+        "q": "The value of c for which Cauchy's mean value theorem holds for f(x) = sin x and g(x) = cos x on [0, \u03c0/2] is:",
+        "options": [
+          "\u03c0/6",
+          "\u03c0/4",
+          "\u03c0/3",
+          "\u03c0/5"
+        ],
+        "answer": "\u03c0/4"
+      },
+      {
+        "q": "The Lagrange's form of Remainder in Taylor's theorem is:",
+        "options": [
+          "(b - a)^n / n! * f^(n)(c)",
+          "(b - a)(b - c)^(n-1) / (n - 1)! * f^(n)(c)",
+          "(b - a)^(n-1) / (n - 1)! * f^(n)(c)",
+          "None"
+        ],
+        "answer": "(b - a)^n / n! * f^(n)(c)"
+      },
+      {
+        "q": "The Maclaurin's series expansion for cosh x is:",
+        "options": [
+          "x + x^3/3! + x^5/5! + ...",
+          "1 - x^2/2! + x^4/4! - ...",
+          "1 + x^2/2! + x^4/4! + ...",
+          "1 + x/1! + x^2/2! + ..."
+        ],
+        "answer": "1 + x^2/2! + x^4/4! + ..."
+      },
+      {
+        "q": "The Maclaurin's series expansion of f(x) is given by f(x) =",
+        "options": [
+          "f(1) + x f'(1) + (x^2/2!) f''(1) + ...",
+          "f(0) + (x - 1) f'(0) + ((x - 1)^2/2!) f''(0) + ...",
+          "f(0) + x f'(0) + (x^2/2!) f''(0) + ...",
+          "None"
+        ],
+        "answer": "f(0) + x f'(0) + (x^2/2!) f''(0) + ..."
+      },
+      {
+        "q": "We can obtain Lagrange's mean value theorem from Cauchy's mean value theorem by taking g(x) =",
+        "options": [
+          "1",
+          "x^2",
+          "x",
+          "None"
+        ],
+        "answer": "x"
+      },
+      {
+        "q": "If f, g: [a, b] \u2192 \u211d are continuous on [a, b] and differentiable in (a, b), then \u2203 c \u2208 (a, b) such that (f(b) - f(a)) / (g(b) - g(a)) = f'(c) / g'(c) provided:",
+        "options": [
+          "g(b) \u2260 g(a)",
+          "g'(c) \u2260 0 c fixed",
+          "g'(x) \u2260 0 for all x \u2208 (a, b)",
+          "None"
+        ],
+        "answer": "g'(x) \u2260 0 for all x \u2208 (a, b)"
+      },
+      {
+        "q": "The Maclaurin's series expansion of log(1 - x) holds for:",
+        "options": [
+          "x \u2208 (0, 1) only",
+          "x \u2208 (-1, 1) only",
+          "x \u2208 [-1, 1)",
+          "x \u2208 (-1, 1]"
+        ],
+        "answer": "x \u2208 [-1, 1)"
+      },
+      {
+        "q": "The Maclaurin's series expansion of f(x) = (1 + x)^n is valid for:",
+        "options": [
+          "x \u2208 \u211d",
+          "x \u2208 \u211d^+ only",
+          "x \u2208 (-1, 1) only",
+          "x \u2208 [-1, 1]"
+        ],
+        "answer": "x \u2208 (-1, 1) only"
+      },
+      {
+        "q": "The value of c for which Cauchy's mean value theorem holds for f(x) = e^x, g(x) = e^(-x) in [a, b], a, b > 0 is:",
+        "options": [
+          "\u221a(ab)",
+          "a \u00b7 b",
+          "(b - a)/2",
+          "(a + b)/2"
+        ],
+        "answer": "(a + b)/2"
+      },
+      {
+        "q": "The Maclaurin's series expansion of f(x) = cos x is valid for:",
+        "options": [
+          "All x \u2208 \u211d",
+          "x \u2208 (-1, 1) only",
+          "x \u2208 (0, 1) only",
+          "x \u2208 (-\u03c0/2, \u03c0/2)"
+        ],
+        "answer": "All x \u2208 \u211d"
+      },
+      {
+        "q": "The Maclaurin's series expansion for f(x) = sinh x is valid for:",
+        "options": [
+          "All x \u2208 \u211d",
+          "x \u2208 (-1, 1) only",
+          "x \u2208 \u211d^+",
+          "x \u2208 [-1, 1]"
+        ],
+        "answer": "All x \u2208 \u211d"
+      },
+      {
+        "q": "The Cauchy's form of Remainder in Taylor's theorem is:",
+        "options": [
+          "(b - a)(b - c)^(n-1) / (n - 1)! * f^(n)(c)",
+          "(b - a)^n / n! * f^(n)(c)",
+          "(b - a)^(n-1) / (n - 1)! * f^(n)(c)",
+          "None"
+        ],
+        "answer": "(b - a)(b - c)^(n-1) / (n - 1)! * f^(n)(c)"
+      }
+    ]
+  }
+}
