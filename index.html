@@ -179,9 +179,9 @@
 </div>
 <p class="text-[11px] leading-relaxed text-emerald-200/70 mb-3">Faculty &amp; Student Learning Portal</p>
 
-<!-- Live Visitor Counter Badge -->
+<!-- Live Global Visitor Counter Badge -->
 <div class="mt-2 p-2.5 bg-black/20 rounded-xl border border-white/10 flex items-center justify-between text-[11px] text-emerald-100">
-<span class="flex items-center gap-1.5"><i class="fa-solid fa-eye text-emerald-300"></i> Visitors:</span>
+<span class="flex items-center gap-1.5"><i class="fa-solid fa-globe text-emerald-300"></i> Global Visits:</span>
 <span id="visitor-count" class="font-bold text-white bg-emerald-700/80 px-2 py-0.5 rounded-md">...</span>
 </div>
 </div>
@@ -397,7 +397,7 @@
         </div>
         <div>
           <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Unit-wise Self-Assessment Quizzes</h2>
-          <p class="text-slate-600 text-sm mt-1">Dynamic questions fetched automatically from quiz banks.</p>
+          <p class="text-slate-600 text-sm mt-1">Dynamic questions fetched automatically from quiz datasets.</p>
         </div>
       </div>
       <button onclick="loadDynamicQuiz()" class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm">
@@ -429,7 +429,7 @@
 
     <form id="dynamicQuizForm" class="space-y-5">
       <div id="dynamicQuestionsContainer" class="space-y-5">
-        <!-- Dynamic JSON Questions populate here -->
+        <!-- Dynamic Questions populate here -->
       </div>
 
       <button type="button" onclick="submitDynamicQuiz()" class="w-full bg-[#2A6B4C] hover:bg-[#22573e] text-white font-bold py-3 rounded-xl transition shadow-md mt-6">
@@ -633,18 +633,27 @@
             box.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Local Storage Visitor Counter
-        document.addEventListener('DOMContentLoaded', () => {
-            let count = localStorage.getItem('site_visitor_count');
-            
-            if (!count) {
-                count = 100;
-            } else {
-                count = parseInt(count, 10) + 1;
+        // Global Real-Time Visitor Tracking (CounterAPI)
+        document.addEventListener('DOMContentLoaded', async () => {
+            const countElem = document.getElementById('visitor-count');
+            try {
+                // Fetch and increment global counter via CounterAPI
+                const res = await fetch('https://api.counterapi.dev/v1/suseelatha_portal/visitors/up');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && data.count) {
+                        countElem.innerText = data.count;
+                        return;
+                    }
+                }
+                throw new Error('Counter API unreachable');
+            } catch (err) {
+                // Fallback to local count if offline
+                let localCount = localStorage.getItem('site_visitor_count') || '120';
+                localCount = parseInt(localCount, 10) + 1;
+                localStorage.setItem('site_visitor_count', localCount);
+                countElem.innerText = localCount;
             }
-            
-            localStorage.setItem('site_visitor_count', count);
-            document.getElementById('visitor-count').innerText = count;
         });
 </script>
 </body>
