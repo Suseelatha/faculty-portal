@@ -662,33 +662,31 @@
             box.scrollIntoView({ behavior: 'smooth' });
         }
 
-       // Global Real-Time Visitor Tracking (CounterAPI V2)
-// Global Real-Time Visitor Tracking (CounterAPI V2 with Auth Header)
-document.addEventListener('DOMContentLoaded', async () => {
-    const countElem = document.getElementById('visitor-count');
-    try {
-        const res = await fetch('https://api.counterapi.dev/v2/suseelathas-team/visitors/up', {
-            headers: {
-                // Replace YOUR_COUNTERAPI_KEY with the key from app.counterapi.dev
-                'Authorization': 'ut_REVw3d77m11eRYkH0PYPMUnLlvkR129X3x0jKkwD'
+       // Global visitor counter (CounterAPI V2)
+        // Do not mix a local browser count with the global total.
+        document.addEventListener('DOMContentLoaded', async () => {
+            const countElem = document.getElementById('visitor-count');
+            if (!countElem) return;
+            countElem.textContent = '…';
+            try {
+                const response = await fetch(
+                    'https://api.counterapi.dev/v2/suseelathas-team/visitors/up',
+                    { method: 'GET', cache: 'no-store' }
+                );
+                if (!response.ok) throw new Error(`Counter API returned HTTP ${response.status}`);
+                const result = await response.json();
+                const count = result?.data?.up_count;
+                if (count === undefined || count === null || !Number.isFinite(Number(count))) {
+                    throw new Error('Counter API response did not contain a valid data.up_count');
+                }
+                countElem.textContent = Number(count).toLocaleString();
+                countElem.title = 'Global visit count';
+            } catch (error) {
+                console.error('Global visitor counter could not be updated:', error);
+                countElem.textContent = 'Unavailable';
+                countElem.title = 'The global counter service could not be reached. Please try again later.';
             }
         });
-        if (res.ok) {
-            const result = await res.json();
-            if (result && result.data && typeof result.data.up_count !== 'undefined') {
-                countElem.innerText = result.data.up_count;
-                return;
-            }
-        }
-        throw new Error('Counter API unreachable or invalid response');
-    } catch (err) {
-        console.warn('CounterAPI error, falling back to local storage:', err);
-        let localCount = parseInt(localStorage.getItem('site_visitor_count') || '120', 10);
-        localCount += 1;
-        localStorage.setItem('site_visitor_count', localCount);
-        countElem.innerText = localCount;
-    }
-});
 </script>
 </body>
 </html>
