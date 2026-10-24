@@ -663,14 +663,18 @@
         }
 
        // Global Real-Time Visitor Tracking (CounterAPI V2)
+// Global Real-Time Visitor Tracking (CounterAPI V2 with Auth Header)
 document.addEventListener('DOMContentLoaded', async () => {
     const countElem = document.getElementById('visitor-count');
     try {
-        // Updated to CounterAPI V2 endpoint with your workspace slug
-        const res = await fetch('https://api.counterapi.dev/v2/suseelathas-team/visitors/up');
+        const res = await fetch('https://api.counterapi.dev/v2/suseelathas-team/visitors/up', {
+            headers: {
+                // Replace YOUR_COUNTERAPI_KEY with the key from app.counterapi.dev
+                'Authorization': 'ut_REVw3d77m11eRYkH0PYPMUnLlvkR129X3x0jKkwD'
+            }
+        });
         if (res.ok) {
             const result = await res.json();
-            // CounterAPI V2 stores the visitor total in result.data.up_count
             if (result && result.data && typeof result.data.up_count !== 'undefined') {
                 countElem.innerText = result.data.up_count;
                 return;
