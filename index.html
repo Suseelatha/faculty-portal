@@ -662,26 +662,29 @@
             box.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Global Real-Time Visitor Tracking (CounterAPI)
-        document.addEventListener('DOMContentLoaded', async () => {
-            const countElem = document.getElementById('visitor-count');
-            try {
-                const res = await fetch('https://api.counterapi.dev/v1/suseelatha_portal/visitors/up');
-                if (res.ok) {
-                    const data = await res.json();
-                    if (data && data.count) {
-                        countElem.innerText = data.count;
-                        return;
-                    }
-                }
-                throw new Error('Counter API unreachable');
-            } catch (err) {
-                let localCount = localStorage.getItem('site_visitor_count') || '120';
-                localCount = parseInt(localCount, 10) + 1;
-                localStorage.setItem('site_visitor_count', localCount);
-                countElem.innerText = localCount;
+       // Global Real-Time Visitor Tracking (CounterAPI V2)
+document.addEventListener('DOMContentLoaded', async () => {
+    const countElem = document.getElementById('visitor-count');
+    try {
+        // Updated to CounterAPI V2 endpoint with your workspace slug
+        const res = await fetch('https://api.counterapi.dev/v2/suseelathas-team/visitors/up');
+        if (res.ok) {
+            const result = await res.json();
+            // CounterAPI V2 stores the visitor total in result.data.up_count
+            if (result && result.data && typeof result.data.up_count !== 'undefined') {
+                countElem.innerText = result.data.up_count;
+                return;
             }
-        });
+        }
+        throw new Error('Counter API unreachable or invalid response');
+    } catch (err) {
+        console.warn('CounterAPI error, falling back to local storage:', err);
+        let localCount = parseInt(localStorage.getItem('site_visitor_count') || '120', 10);
+        localCount += 1;
+        localStorage.setItem('site_visitor_count', localCount);
+        countElem.innerText = localCount;
+    }
+});
 </script>
 </body>
 </html>
